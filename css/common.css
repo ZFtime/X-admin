@@ -25,7 +25,7 @@
     height: 60px;
 }
 .m_right_content_input input {
-    width: 94%;
+    width: 95%;
     padding: 11px 16px;
     border: 1px solid #727171;
   }
@@ -33,7 +33,7 @@
   .m_right_content_i {
     float: left;
     width: 16%;
-    height: 38px;
+    height: 39px;
     line-height: 40px;
     text-align: center;
     border-right: 1px solid #727171;

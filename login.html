@@ -98,6 +98,7 @@
                             console.log(res.code);
                             if (res.code && res.code == 1) {
                                 alert("已登录");
+                                sessionStorage.setItem('isLogin',true);
                                 location.href = "./index.html";
                             } else {
                                 console.log(res);

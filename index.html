@@ -32,7 +32,7 @@
                             <!-- 二级菜单 -->
                             <dd><a href="">个人信息</a></dd>
                             <dd><a href="">切换帐号</a></dd>
-                            <dd><a href="./login.html">退出</a></dd>
+                            <dd><a href="javascript:;" class="exitAdmin">退出</a></dd>
                         </dl>
                     </li>
                     <!-- <li class="layui-nav-item">
@@ -462,9 +462,18 @@
     </div>
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script src="./js/x-admin.js"></script>
+    <script src="./js/common.js"></script>
     <script>
+        document.querySelector('.exitAdmin').onclick=function(){
+            sessionStorage.setItem('isLogin',false);
+            window.location.href="./login.html";
+        }
         var _hmt = _hmt || [];
         (function () {
+            var isLogin=sessionStorage.getItem('isLogin');
+            if(isLogin==='false') {
+                window.location.href='./login.html';
+            }
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
             var s = document.getElementsByTagName("script")[0];

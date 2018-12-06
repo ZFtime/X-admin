@@ -1,6 +1,6 @@
 (function(){
     var isLogin=sessionStorage.getItem('isLogin');
-    if(isLogin==='false') {
+    if(isLogin!=='true') {
         window.location.href='./login.html';
     }
 })();

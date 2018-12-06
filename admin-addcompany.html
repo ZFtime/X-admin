@@ -20,24 +20,14 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label">
-                    <span class="x-red">*</span>用户名
+                    <span class="x-red">*</span>公司名
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
+                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off"
+                        class="layui-input">
                 </div>
-                <div class="layui-form-mid layui-word-aux">
-                    <span class="x-red">*</span>将会成为您唯一的登入名
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label for="phone" class="layui-form-label">
-                    <span class="x-red">*</span>手机
-                </label>
-                <div class="layui-input-inline">
-                    <input type="text" id="phone" name="phone" required="" lay-verify="phone" autocomplete="off" class="layui-input">
-                </div>
-                <div class="layui-form-mid layui-word-aux">
-                    <span class="x-red">*</span>将会成为您唯一的登入名
+                <div class="layui-form-mid layui-word-aux username_error">
+                    <!-- <span class="x-red">*</span>将会成为您唯一的登入名 -->
                 </div>
             </div>
             <div class="layui-form-item">
@@ -45,50 +35,17 @@
                     <span class="x-red">*</span>邮箱
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input">
+                    <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off"
+                        class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
-                    <span class="x-red">*</span>
+
                 </div>
             </div>
-            <!-- <div class="layui-form-item">
-                    <label for="role" class="layui-form-label">
-                        <span class="x-red">*</span>角色
-                    </label>
-                    <div class="layui-input-inline">
-                      <select name="role">
-                        <option value="">请选择角色</option>
-                        <option value="超级管理员">超级管理员</option>
-                        <option value="编辑人员">编辑人员</option>
-                        <option value="问题维护">问题维护</option>
-                      </select>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_pass" class="layui-form-label">
-                        <span class="x-red">*</span>密码
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
-                        autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        6到16个字符
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label for="L_repass" class="layui-form-label">
-                        <span class="x-red">*</span>确认密码
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
-                        autocomplete="off" class="layui-input">
-                    </div>
-                </div> -->
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label">
                 </label>
-                <button class="layui-btn" lay-filter="add" lay-submit="">
+                <button class="layui-btn" lay-filter="add_company" lay-submit="">
                     添加公司
                 </button>
             </div>
@@ -98,26 +55,59 @@
     </script>
     <script src="./js/x-layui.js" charset="utf-8">
     </script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
     <script>
         layui.use(['form', 'layer'], function () {
             $ = layui.jquery;
             var form = layui.form(),
                 layer = layui.layer;
-
-
-            // 监听提交
-            form.on('submit(add)', function (data) {
-                //   console.log(JSON.stringify(data))
+            sessionStorage.getItem('needHtml')
+            var tbody = sessionStorage.needHtml;
+            var htmlStr = "";
+            // 我的公司——————监听提交
+            form.on('submit(add_company)', function (data) {
+                //   console.log(JSON.stringify(data.field.username));
                 $.ajax({
                     type: "post",
                     url: 'http://qzt.cn/api.php/index/account/add_company.html',
                     dataType: "json",
-                    // data:{
-                     //   // 放参数
-                    // },
+                    data: {
+                        company_name: data.field.username
+                    },
                     success: function (res) {
-                        alert(JSON.stringify(res))  
+                        var status = res.code
+                        sessionStorage.setItem("company_status", status);
+                        console.log(res);
+                        if (res.code === 1) {
+                            $(".username_error").html('<span class="x-red">' + '该公司不存在' +
+                                '</span>');
+                            return false;
+                        } else if (res.code === 200) {
+                            var htmlStr = "";
+                            var companydata = res.data;
+                            companydata.forEach(element => {
+                                htmlStr += "<tr>" +
+                                    "<td>" + element.license_no + "</td>" +
+                                    "<td>" + element.company_name + "</td>" +
+                                    "<td>" + element.business_type + "</td>" +
+                                    "<td>" + element.license_type + "</td>" +
+                                    "<td>" + element.is_valid + "</td>" +
+                                    "<td>" + element.is_valid + "</td>" +
+                                    "<td>" + element.start_year + "</td>" +
+                                    "<td>" + element.xqsj + "</td>" +
+                                    "</tr>";
+                            });
+                            sessionStorage.setItem("htmlStr", htmlStr);
+                            parent.layer.close(index);
+                            // $("#tbody").css({
+                            //     background: red
+                            // })
+                            // parent.layer.close(index);
+                        } else {
+                            htmlStr = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+                            sessionStorage.setItem("htmlStr", htmlStr);
+                        }
+
                     },
                     error: function () {
 
@@ -125,12 +115,10 @@
                 })
                 //发异步，把数据提交给php
                 // layer.alert("增加成功", {icon: 6},function () {
-                    // 获得frame索引
-                    var index = parent.layer.getFrameIndex(window.name);
-
+                // 获得frame索引
+                var index = parent.layer.getFrameIndex(window.name);
                 // });
                 //关闭当前frame
-                  parent.layer.close(index);
                 return false;
             });
 

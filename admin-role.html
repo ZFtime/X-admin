@@ -39,11 +39,17 @@
                 <h3>许可证信息</h3>
             </div>
             <div class="m_r_right">
-                <div class="m_right_content_input">
+                <!-- <div class="m_right_content_input">
                     <input type="text" placeholder="滚动信息滚动信息滚动信息滚动信息滚动信息滚动信息滚动信息">
-                </div>
-                <div class="m_right_content_i">
+                </div> -->
+                <!-- <div class="m_right_content_i">
                     <i class="fa fa-search" aria-hidden="true"></i>
+                </div> -->
+                <div class="layui-input-inline" style="width:72%;">
+                    <input type="text" name="username" placeholder="请输入公司名" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-input-inline" style="width:80px">
+                    <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
                 </div>
             </div>
         </div>
@@ -63,7 +69,7 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="icp_tbody">
                 <tr>
                     <!-- <td>
                         <input type="checkbox" value="1" name="">
@@ -74,7 +80,7 @@
                     <td>信息服务业务(不含互联网信息服务)</td>
                     <td>2018-01-01</td>
                     <td>2018-11-11</td> -->
-                    
+
                     <!-- <td class="td-manage">
                         有效
                         <a title="编辑" href="javascript:;" onclick="role_edit('编辑','role-edit.html','4','','510')" class="ml-5"
@@ -89,7 +95,7 @@
                         <a href="javascript:;">年检</a> <a href="javascript:;">续期</a>
                         <a href="javascript:;">提醒</a> -->
                     <!-- </td> -->
-                    <td colspan='8'>暂无数据,请到我的公司添加数据</td>
+                    <!-- <td colspan='8'>暂无数据,请到我的公司添加数据</td> -->
                 </tr>
             </tbody>
         </table>
@@ -99,7 +105,59 @@
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script src="./js/x-layui.js" charset="utf-8"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
     <script>
+        var company_status = sessionStorage.getItem("company_status");
+        if (company_status == 200) {
+            $.ajax({
+                type: "get",
+                url: 'http://qzt.cn/api.php/index/account/get_license_list.html',
+                dataType: "json",
+                // data: {
+                //     company_name: data.field.username
+                // },
+                success: function (res) {
+                    // icp许可证办理
+                    // console.log(res);
+                    if (res.code === 200) {
+                        var html = "";
+                        var icpdata = res.data
+                        icpdata.forEach(function (element) {
+                            // console.log(element);
+                            html += "<tr>" +
+                                "<td>" + element.license_no + "</td>" +
+                                "<td>" + element.company_name + "</td>" +
+                                "<td>" + element.business_type + "</td>" +
+                                "<td>" + element.license_type + "</td>" +
+                                "<td>" + element.is_valid + "</td>" +
+                                "<td>" + element.is_valid + "</td>" +
+                                "<td>" + element.start_year + "</td>" +
+                                "<td>" + element.xqsj + "</td>" +
+                                "</tr>";
+                            // $("#icp_tbody").append(html);
+                        });
+                        $("#icp_tbody").append(html);
+                    } else {
+                        html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+                        $("#icp_tbody").append(html);
+                    }
+                    // if (res.code && res.code == 200) {
+
+                    // html = "<tr><td>" + res.Name + "</td>" +
+                    //     "<td>" + result.No + "</td></tr>";
+                    // $("#icp_tbody")
+                    // }
+                },
+                error: function () {
+                    // alert("未获取数据");
+                    return false;
+                }
+            })
+        } else {
+            html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+            $("#icp_tbody").append(html);
+        }
+
         layui.use('laypage', function () {
             var laypage = layui.laypage;
             laypage({

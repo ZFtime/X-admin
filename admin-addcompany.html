@@ -23,8 +23,7 @@
                     <span class="x-red">*</span>公司名
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off"
-                        class="layui-input">
+                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux username_error">
                     <!-- <span class="x-red">*</span>将会成为您唯一的登入名 -->
@@ -35,8 +34,7 @@
                     <span class="x-red">*</span>邮箱
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off"
-                        class="layui-input">
+                    <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-mid layui-word-aux">
 
@@ -104,7 +102,11 @@
                             // })
                             // parent.layer.close(index);
                         } else {
-                            htmlStr = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+                            htmlStr = "<tr>" +
+                                "<td colspan='8'>" +
+                                "暂无数据" +
+                                "</td>" +
+                                "</tr>"
                             sessionStorage.setItem("htmlStr", htmlStr);
                         }
 

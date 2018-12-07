@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="x-nav">
+    <div class="x-nav" style="display: none;">
         <span class="layui-breadcrumb">
             <a><cite>首页</cite></a>
             <!-- <a><cite>会员管理</cite></a>
@@ -51,6 +51,8 @@
                 <div class="layui-input-inline" style="width:80px">
                     <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
                 </div>
+                  <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+            title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
             </div>
         </div>
         <table class="layui-table">
@@ -111,7 +113,7 @@
         if (company_status == 200) {
             $.ajax({
                 type: "get",
-                url: 'http://qzt.cn/api.php/index/account/get_license_list.html',
+                url: 'http://qzt.cn/api.php/index/Company/get_license_list.html',
                 dataType: "json",
                 // data: {
                 //     company_name: data.field.username
@@ -120,6 +122,7 @@
                     // icp许可证办理
                     // console.log(res);
                     if (res.code === 200) {
+                        // console.log(res);
                         var html = "";
                         var icpdata = res.data
                         icpdata.forEach(function (element) {
@@ -130,7 +133,7 @@
                                 "<td>" + element.business_type + "</td>" +
                                 "<td>" + element.license_type + "</td>" +
                                 "<td>" + element.is_valid + "</td>" +
-                                "<td>" + element.is_valid + "</td>" +
+                                "<td>" + element.start_year + "</td>" +
                                 "<td>" + element.start_year + "</td>" +
                                 "<td>" + element.xqsj + "</td>" +
                                 "</tr>";

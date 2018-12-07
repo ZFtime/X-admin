@@ -1,36 +1,41 @@
-.m_header{
+.m_header {
     height: 60px;
     border-bottom: 1px solid #727171;
 }
-.m_r_left{
+
+.m_r_left {
     float: left;
     width: 10%;
-    height:60px;
+    height: 60px;
     line-height: 60px;
     /* background-color: pink; */
 }
-.m_r_right{
+
+.m_r_right {
     float: right;
-    width: 58%;
+    width: 41%;
     height: 60px;
 }
-.m_r_right input{
+
+.m_r_right input {
     position: relative;
 }
-.m_r_search{
+
+.m_r_search {
     position: absolute;
     top: 0px;
-    right:0px;
+    right: 0px;
     width: 10px;
     height: 60px;
 }
+
 .m_right_content_input input {
     width: 95%;
     padding: 11px 16px;
     border: 1px solid #727171;
-  }
-  
-  .m_right_content_i {
+}
+
+.m_right_content_i {
     float: left;
     width: 16%;
     height: 39px;
@@ -39,18 +44,35 @@
     border-right: 1px solid #727171;
     border-top: 1px solid #727171;
     border-bottom: 1px solid #727171;
-  }
-  .m_right_content_i i {
+}
+
+.m_right_content_i i {
     font-size: 20px;
-  }
-  .m_right_content_input {
+}
+
+.m_right_content_input {
     float: left;
     width: 83%;
-  }
-  .layui-table th,td{
-      text-align: center;
-  }
-  #page{
-      float:right;
-  }
-  
+}
+
+.layui-table th,
+td {
+    text-align: center;
+}
+
+#page {
+    float: right;
+}
+
+.layui-nav-child{
+    display: none;
+}
+.layui-nav-child3 {
+    display: none;
+}
+.layui-nav-childed {
+    display: block;
+}
+.layui-table td, .layui-table th{
+    padding: 8px 14px;
+}

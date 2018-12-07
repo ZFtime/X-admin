@@ -5,7 +5,9 @@
 .site-inline {
   font-size: 0;
 }
-
+.x-nav{
+  display:none;
+}
 .site-tree,
 .site-content {
   display: inline-block;

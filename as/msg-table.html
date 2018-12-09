@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        基本情况表格
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="stylesheet" href="/css/as.css">
+    <link rel="stylesheet" href="/lib/layui/css/laydate.css">
+</head>
+
+<body>
+    <div class="b-nav">
+        <xblock>
+            <div class="x-left">
+                <span>年份选择：</span>
+                <input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+            </div>
+            <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                下载模板</button>
+            <!-- <button class="layui-btn" onclick="banner_add('添加用户','banner-add.html','600','500')">
+                <i class="layui-icon"></i>添加</button> -->
+            <div class="x-right" style="line-height:40px">上报状态：
+                <span>已上报</span>
+            </div>
+        </xblock>
+    </div>
+    <div class="b-body">
+        <div class="b-table">
+            <table class="layui-table">
+                <tbody>
+                    <tr>
+                        <th colspan="4" style="font-size: 16px;padding:5px;text-align:center;">业务情况表单-信息服务（仅限互联网信息服务）业务表
+                            <span style=" float: right; font-size: 10px; font-weight: normal; margin-top:10px;margin-right:10px;">
+                                <span style="float:left;">保存状态：</span>
+                                <span style="float:right;" id="saveStatus">保存</span>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width:10%">序号</td>
+                        <td style="width:22%">指标名称</td>
+                        <td style="width:10%">单位</td>
+                        <td style="width:58%">实际</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>业务开通时间</td>
+                        <td colspan="2">
+                            <input id="jg2180" style="width: 100%; display: none;" value="2016-9-19" data-options="showSeconds:false,editable:false,required:true"
+                                class="easyui-datebox datebox-f combo-f textbox-f" textboxname="jg2180" comboname="jg2180">
+                            <span class="textbox easyui-fluid combo datebox" style="width: 745px; height: 30px;">
+                                <span class="textbox-addon textbox-addon-right" style="right: 0px; top: 0px;">
+                                    <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1" style="width: 18px; height: 30px;"></a>
+                                </span>
+                                <input id="_easyui_textbox_input13" type="text" class="textbox-text validatebox-text validatebox-readonly" autocomplete="off"
+                                    tabindex="" readonly="readonly" placeholder="" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 706px;">
+                                <input type="hidden" class="textbox-value" name="jg2180" value="2016-09-19">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>信息服务类型</td>
+                        <td colspan="2" style="text-align: left;" id="check">
+                            <table style="border: 0">
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 0;text-align: left;">
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="信息发布平台和递送服务">信息发布平台和递送服务
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="信息搜索查询服务">信息搜索查询服务
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="信息社区平台服务">信息社区平台服务
+                                            <br>
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="信息即时交互服务">信息即时交互服务
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="信息保护和处理服务">信息保护和处理服务
+                                            <input type="checkbox" id="" name="jg2181" class="checkbox" value="其它" onclick="otherShow(this)">其它
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 0">
+                                            <input id="cpticpOther" class="easyui-textbox textbox-f" data-options="validType:'length[1,100]',readonly:true" style="width: 100%; display: none;"
+                                                textboxname="jg2181">
+                                            <span class="textbox textbox-readonly easyui-fluid" style="width: 397px; height: 30px;">
+                                                <input id="_easyui_textbox_input1" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
+                                                    autocomplete="off" tabindex="" readonly="readonly" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 377px;"
+                                                    maxlength="1000">
+                                                <input type="hidden" class="textbox-value" name="jg2181" value="" maxlength="1000">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>从事本业务人员数</td>
+                        <td style="text-align: left;">人</td>
+                        <td>
+                            <input class="easyui-textbox textbox-f" id="" data-options="value:'10',required:true,validType:'otherNum'" style="width: 100%; display: none;"
+                                textboxname="jg2182">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2182" value="10" maxlength="1000">
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="5">4</td>
+                        <td>本业务年度收入</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg2183" data-options="value:'128',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2183">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2183" value="128" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);text-align: left;text-indent: 30px;">其中:网络游戏收入</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg2184" data-options="value:'0',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2184">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2184" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);text-align: left;text-indent: 30px;">其中:网络生活服务平台收入</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg2185" data-options="value:'0',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2185">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2185" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);text-align: left;text-indent: 30px;">其中:网络公共服务平台收入</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg2186" data-options="value:'0',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2186">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input6" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2186" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);text-align: left;text-indent: 30px;">其中:其他平台收入</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg2187" data-options="value:'128',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2187">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input7" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2187" value="128" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>本业务年度成本</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="" data-options="value:'98',required:true,validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2188">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input8" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2188" value="98" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>本业务年度利润</td>
+                        <td style="text-align: left;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="" data-options="value:'30',required:true, validType:'number'" style="width: 100%; display: none;"
+                                textboxname="jg2189">
+                            <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                <input id="_easyui_textbox_input9" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px; color: black;"
+                                    maxlength="1000">
+                                <input type="hidden" class="textbox-value" name="jg2189" value="30" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>盈亏情况</td>
+                        <td colspan="2" style="text-align: left;">
+                            <input type="radio" name="jg2190" class="radio" checked="" value="1">盈
+                            <input type="radio" name="jg2190" class="radio" value="2">亏
+                            <input type="radio" name="jg2190" class="radio" value="3">平
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>盈亏原因分析</td>
+                        <td colspan="2" style="text-align: left;">
+                            <span style="height:30px;line-height:30px;">提示：分析造成公司本年度本业务盈亏的原因。</span>
+                            <input class="easyui-textbox textbox-f" id="jg2191" data-options="required:true, validType:'length[1,2000]',multiline:true,
+                                        prompt:'分析造成公司本年度本业务盈亏的原因。'" style="width: 100%; height: 80px; display: none;" textboxname="jg2191">
+                            <span class="textbox easyui-fluid" style="width: 745px; height: 78px;">
+                                <textarea id="_easyui_textbox_input10" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder="分析造成公司本年度本业务盈亏的原因。"
+                                    style="margin: 0px; height: 70px; width: 725px;" maxlength="2000"></textarea>
+                                <input type="hidden" class="textbox-value" name="jg2191" value="通过百度推广等手段，加大宣传力度。" maxlength="1000">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>下年度业务发展计划</td>
+                        <td colspan="2" style="text-align: left;">
+                            <span style="height:30px;line-height:30px;">提示：简要介绍公司下年度发展本业务的计划。</span>
+                            <input class="easyui-textbox textbox-f" id="jg2192" data-options="required:true, validType:'length[1,2000]',multiline:true,
+                                        prompt:'简要介绍公司下年度发展本业务的计划。'" style="width: 100%; height: 80px; display: none;" textboxname="jg2192">
+                            <span class="textbox easyui-fluid" style="width: 745px; height: 78px;">
+                                <textarea id="_easyui_textbox_input11" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder="简要介绍公司下年度发展本业务的计划。"
+                                    style="margin: 0px; height: 70px; width: 725px;" maxlength="2000"></textarea>
+                                <input type="hidden" class="textbox-value" name="jg2192" value="简要介绍公司下年度发展本业务的计划。下年度计划增加网站服务内容。" maxlength="1000">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>主要问题及相关建议</td>
+                        <td colspan="2" style="text-align: left;">
+                            <span style="height:30px;line-height:30px;">提示：简要描述公司在经营中遇到的困难，也可以是市场竞争中存在的问题或者对政府监管的意见建议。</span>
+                            <input class="easyui-textbox textbox-f" id="jg2193" data-options="required:true, validType:'length[1,2000]',multiline:true,
+                                        prompt:'简要描述公司在经营中遇到的困难，也可以是市场竞争中存在的问题或者对政府监管的意见建议。'" style="width: 100%; height: 80px; display: none;"
+                                textboxname="jg2193">
+                            <span class="textbox easyui-fluid" style="width: 745px; height: 78px;">
+                                <textarea id="_easyui_textbox_input12" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder="简要描述公司在经营中遇到的困难，也可以是市场竞争中存在的问题或者对政府监管的意见建议。"
+                                    maxlength="2000" style="margin: 0px; height: 70px; width: 725px;"></textarea>
+                                <input type="hidden" class="textbox-value" name="jg2193" value="无" maxlength="1000">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/x-layui.js" charset="utf-8"></script>
+    <script src="../laydate/laydate.js"></script>
+    <script>
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+
+        // layui.use(['element', 'layer', 'form'], function () {
+        //     $ = layui.jquery; //jquery
+        //     lement = layui.element(); //面包导航
+        //     layer = layui.layer; //弹出层
+        //     form = layui.form();
+
+        //     //监听提交
+        //     form.on('submit(add)', function (data) {
+        //         console.log(data);
+        //         //发异步，把数据提交给php
+        //         layer.alert("增加成功", {
+        //             icon: 6
+        //         });
+        //         $('#x-link').prepend(
+        //             '<tr><td><input type="checkbox"value="1"name=""></td><td>1</td><td>1</td><td>' +
+        //             data.field.name +
+        //             '</td><td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'cate-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>'
+        //         );
+        //         return false;
+        //     });
+
+
+        // })
+
+
+
+
+        //批量删除提交
+        // function delAll() {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //捉到所有被选中的，发异步进行删除
+        //         layer.msg('删除成功', {
+        //             icon: 1
+        //         });
+        //     });
+        // }
+
+        //-编辑
+        // function cate_edit(title, url, id, w, h) {
+        //     x_admin_show(title, url, w, h);
+        // }
+
+        /*-删除*/
+        // function cate_del(obj, id) {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //发异步删除数据
+        //         $(obj).parents("tr").remove();
+        //         layer.msg('已删除!', {
+        //             icon: 1,
+        //             time: 1000
+        //         });
+        //     });
+        // }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

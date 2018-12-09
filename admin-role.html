@@ -20,14 +20,22 @@
 <body>
     <div class="x-nav" style="display: none;">
         <span class="layui-breadcrumb">
-            <a><cite>首页</cite></a>
+            <a>
+                <cite>首页</cite>
+            </a>
             <!-- <a><cite>会员管理</cite></a>
               <a><cite>角色管理</cite></a> -->
-            <a><cite>信息管理</cite></a>
-            <a><cite>许可证管理</cite></a>
+            <a>
+                <cite>信息管理</cite>
+            </a>
+            <a>
+                <cite>许可证管理</cite>
+            </a>
         </span>
         <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
-            title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+            title="刷新">
+            <i class="layui-icon" style="line-height:30px">ဂ</i>
+        </a>
     </div>
     <div class="x-body">
 
@@ -49,10 +57,14 @@
                     <input type="text" name="username" placeholder="请输入公司名" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-input-inline" style="width:80px">
-                    <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                        <i class="layui-icon">&#xe615;</i>
+                    </button>
                 </div>
-                  <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
-            title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+                <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
+                    title="刷新">
+                    <i class="layui-icon" style="line-height:30px">ဂ</i>
+                </a>
             </div>
         </div>
         <table class="layui-table">
@@ -76,17 +88,16 @@
                     <!-- <td>
                         <input type="checkbox" value="1" name="">
                     </td> -->
-                    <!-- <td>公司名称某某有限公司</td>
+                    <td>公司名称某某有限公司</td>
                     <td>B2-12345678</td>
                     <td>增值电信</td>
                     <td>信息服务业务(不含互联网信息服务)</td>
                     <td>2018-01-01</td>
-                    <td>2018-11-11</td> -->
+                    <td>2018-11-11</td>
 
-                    <!-- <td class="td-manage">
+                    <td class="td-manage">
                         有效
-                        <a title="编辑" href="javascript:;" onclick="role_edit('编辑','role-edit.html','4','','510')" class="ml-5"
-                            style="text-decoration:none">
+                        <a title="编辑" href="javascript:;" onclick="role_edit('编辑','role-edit.html','4','','510')" class="ml-5" style="text-decoration:none">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
                         <a title="删除" href="javascript:;" onclick="role_del(this,'1')" style="text-decoration:none">
@@ -94,8 +105,10 @@
                         </a>
                     </td>
                     <td class="td-manage">
-                        <a href="javascript:;">年检</a> <a href="javascript:;">续期</a>
-                        <a href="javascript:;">提醒</a> -->
+                        <a href="javascript:;" onclick="window.open('./as/as.html')">年检</a>
+                        <a href="javascript:;">续期</a>
+                        <a href="javascript:;">提醒</a>
+                    </td>
                     <!-- </td> -->
                     <!-- <td colspan='8'>暂无数据,请到我的公司添加数据</td> -->
                 </tr>
@@ -141,7 +154,7 @@
                         });
                         $("#icp_tbody").append(html);
                     } else {
-                        html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+                        // html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
                         $("#icp_tbody").append(html);
                     }
                     // if (res.code && res.code == 200) {
@@ -157,7 +170,7 @@
                 }
             })
         } else {
-            html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+            // html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
             $("#icp_tbody").append(html);
         }
 

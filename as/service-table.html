@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        基本情况表格
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="stylesheet" href="/css/as.css">
+    <link rel="stylesheet" href="/lib/layui/css/laydate.css">
+</head>
+
+<body>
+    <div class="b-nav">
+        <xblock>
+            <div class="x-left">
+                <span>年份选择：</span>
+                <input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+            </div>
+            <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                下载模板</button>
+            <!-- <button class="layui-btn" onclick="banner_add('添加用户','banner-add.html','600','500')">
+                <i class="layui-icon"></i>添加</button> -->
+            <div class="x-right" style="line-height:40px">上报状态：
+                <span>已上报</span>
+            </div>
+        </xblock>
+    </div>
+    <div class="b-body">
+        <div class="b-table">
+            <table class="layui-table">
+                <tbody>
+                    <tr>
+                        <th colspan="5" style="font-size: 16px; padding: 5px; text-align: center;">企业服务质量（公示内容将会向社会公示）
+                            <span style="float: right; font-size: 10px; font-weight: normal; margin-top: 10px; margin-right: 10px;">
+                                <span style="float: left;">保存状态：</span>
+                                <span style="float: right;" id="saveStatus">保存</span>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 5%">序号</td>
+                        <td style="width: 30%; text-align: center;">指标名称</td>
+                        <td style="width: 5%">单位</td>
+                        <td style="width: 50%; text-align: center;">实际</td>
+                        <td style="width: 10%">公示</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>客服负责人</td>
+                        <td colspan="2">
+                            <input class="easyui-textbox textbox-f" id="JG1019" data-options="value:'张学敏',required:true" style="width: 100%; display: none;"
+                                textboxname="jg1019">
+                            <span class="textbox easyui-fluid" style="width: 604px; height: 30px;">
+                                <input id="_easyui_textbox_input1" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 584px;">
+                                <input type="hidden" class="textbox-value" name="jg1019" value="张学敏" maxlength="1000">
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>客服负责人联系方式（手机号码）</td>
+                        <td colspan="2">
+                            <input class="easyui-textbox textbox-f" id="JG1020" data-options="value:'13146948798',prompt:'手机号码格式',required:true,validType:'phone'"
+                                style="width: 100%; display: none;" textboxname="jg1020">
+                            <span class="textbox easyui-fluid" style="width: 604px; height: 30px;">
+                                <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="手机号码格式" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 584px;">
+                                <input type="hidden" class="textbox-value" name="jg1020" value="13146948798" maxlength="1000">
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>客户服务投诉电话</td>
+                        <td colspan="2">
+                            <input class="easyui-textbox textbox-f" id="JG1021" data-options="value:'61138585',prompt:'指用户使用本业务中发现问题或出现争议等情况时的投诉电话。',required:true,validType:'otherCode'"
+                                style="width: 100%; display: none;" textboxname="jg1021">
+                            <span class="textbox easyui-fluid" style="width: 604px; height: 30px;">
+                                <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指用户使用本业务中发现问题或出现争议等情况时的投诉电话。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 584px;">
+                                <input type="hidden" class="textbox-value" name="jg1021" value="61138585" maxlength="1000">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="checkbox" disabled="disabled" checked="checked">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>用户投诉量</td>
+                        <td>件</td>
+                        <td>
+                            <input class="easyui-textbox textbox-f" id="jg1022" data-options="value:'0',prompt:'指用户报告期内投诉的总数。',required:true,validType:'otherNum'"
+                                style="width: 100%; display: none;" textboxname="jg1022">
+                            <span class="textbox easyui-fluid" style="width: 547px; height: 30px;">
+                                <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指用户报告期内投诉的总数。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 528px;">
+                                <input type="hidden" class="textbox-value" name="jg1022" value="0" maxlength="1000">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="checkbox" disabled="disabled" checked="checked">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>用户投诉回复率</td>
+                        <td>%</td>
+                        <td>
+                            <input class="easyui-textbox textbox-f" id="jg1023" data-options="value:'100',prompt:'指公司对用户投诉处理回复数量占总投诉量的比例。',required:true,validType:['onePoint','maxPoint']"
+                                style="width: 100%; display: none;" textboxname="jg1023">
+                            <span class="textbox easyui-fluid" style="width: 548px; height: 30px;">
+                                <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指公司对用户投诉处理回复数量占总投诉量的比例。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 528px;">
+                                <input type="hidden" class="textbox-value" name="jg1023" value="100" maxlength="1000">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="checkbox" disabled="disabled" checked="checked">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>用户投诉主要问题及原因</td>
+                        <td colspan="2" style="text-align: left;">
+                            <span style="line-height: 30px;height:30px;">提示：指用户投诉中占较多数量的问题，同时将产生问题的原因加以分析</span>
+                            <input class="easyui-textbox textbox-f" id="jg1024" data-options="multiline:true,prompt:'指用户投诉中占较多数量的问题，同时将产生问题的原因加以分析。',required:true,validType:'length[0,2000]'"
+                                style="width: 100%; height: 100px; display: none;" textboxname="jg1024">
+                            <span class="textbox easyui-fluid" style="width: 605px; height: 98px;">
+                                <textarea id="_easyui_textbox_input6" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指用户投诉中占较多数量的问题，同时将产生问题的原因加以分析。" maxlength="2000" style="margin: 0px; height: 90px; width: 585px;"></textarea>
+                                <input type="hidden" class="textbox-value" name="jg1024" value="无" maxlength="1000">
+                            </span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/x-layui.js" charset="utf-8"></script>
+    <script src="../laydate/laydate.js"></script>
+    <script>
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+
+        // layui.use(['element', 'layer', 'form'], function () {
+        //     $ = layui.jquery; //jquery
+        //     lement = layui.element(); //面包导航
+        //     layer = layui.layer; //弹出层
+        //     form = layui.form();
+
+        //     //监听提交
+        //     form.on('submit(add)', function (data) {
+        //         console.log(data);
+        //         //发异步，把数据提交给php
+        //         layer.alert("增加成功", {
+        //             icon: 6
+        //         });
+        //         $('#x-link').prepend(
+        //             '<tr><td><input type="checkbox"value="1"name=""></td><td>1</td><td>1</td><td>' +
+        //             data.field.name +
+        //             '</td><td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'cate-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>'
+        //         );
+        //         return false;
+        //     });
+
+
+        // })
+
+
+
+
+        //批量删除提交
+        // function delAll() {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //捉到所有被选中的，发异步进行删除
+        //         layer.msg('删除成功', {
+        //             icon: 1
+        //         });
+        //     });
+        // }
+
+        //-编辑
+        // function cate_edit(title, url, id, w, h) {
+        //     x_admin_show(title, url, w, h);
+        // }
+
+        /*-删除*/
+        // function cate_del(obj, id) {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //发异步删除数据
+        //         $(obj).parents("tr").remove();
+        //         layer.msg('已删除!', {
+        //             icon: 1,
+        //             time: 1000
+        //         });
+        //     });
+        // }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

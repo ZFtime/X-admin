@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        基本情况表格
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="stylesheet" href="/css/as.css">
+    <link rel="stylesheet" href="/lib/layui/css/laydate.css">
+</head>
+
+<body>
+    <div class="b-nav">
+        <xblock>
+            <div class="x-left">
+                <span>年份选择：</span>
+                <input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+            </div>
+            <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                下载模板</button>
+            <!-- <button class="layui-btn" onclick="banner_add('添加用户','banner-add.html','600','500')">
+                <i class="layui-icon"></i>添加</button> -->
+            <div class="x-right" style="line-height:40px">上报状态：
+                <span>已上报</span>
+            </div>
+        </xblock>
+    </div>
+    <div class="b-body">
+        <div class="b-table">
+            <form id="entBaseForm" action="" method="post" data-options="novalidate:true" style="padding: 10px;" class="easyui-form">
+                    <input type= "hidden"  name = "cptId" value ="4FB7D1EB763CC76D057DE8CE1C20F444">
+                <table class="layui-table">
+                    <tbody>
+                        <tr>
+                            <th colspan="7" style="font-size: 16px; padding: 5px; text-align: center;">企业基本情况(公示内容将会向社会公示)
+                                <span style=" float: right; font-size: 10px; font-weight: normal; margin-top:10px;margin-right:10px;">
+                                    <span style="float:left;">保存状态：</span>
+                                    <span style="float:right;" id="status">保存</span>
+                                </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="width: 5%">序号</td>
+                            <td colspan="3" style="width: 50%; text-align: center;">指标名称</td>
+                            <td style="width: 5%">单位</td>
+                            <td style="width: 30%; text-align: center;">实际</td>
+                            <td style="width: 10%">公示</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td colspan="3">公司简介</td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1000" value="" data-options="required:true,validType:'length[1,1000]',maxLength:'1000',multiline:true"
+                                    style="width: 100%; height: 60px; display: none;" textboxname="jg1000">
+                                <span class="textbox easyui-fluid" style="width: 400px; height: 58px;">
+                                    <textarea id="_easyui_textbox_input1" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; height: 50px; width: 380px;" maxlength="2000"></textarea>
+                                    <input type="hidden" class="textbox-value" name="jg1000" value="北京金三科技股份有限公司主营业务包括技术开发、技术服务、技术咨询、技术转让；基础软件服务；应用软件服务；代理、发布广告；计算机技术培训；销售计算机、软件及辅助设备、通讯设备、电子产品；零售、网上销售图书、报纸、期刊、电子出版物、音像制品（出版物经营许可证有效期至2015年12月31日）；互联网信息服务。"
+                                        maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td colspan="3">企业名称
+                                <input type="hidden" id="base_jg1001" value="北京金三科技股份有限公司">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1001" data-options="required:true,validType:'length[1,100]',value:'北京金三科技股份有限公司'"
+                                    style="width: 100%; display: none;" textboxname="jg1001">
+                                <span class="textbox easyui-fluid" style="width: 450px; height: 30px;">
+                                    <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 430px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1001" value="北京金三科技股份有限公司" maxlength="1000">
+                                </span>
+
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td colspan="3">统一社会信用代码
+                                <input type="hidden" id="base_jg1002" value="91110108779516907M">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1002" data-options="required:true,validType:'codeVLI',value:'91110108779516907M'"
+                                    style="width: 100%; display: none;" textboxname="jg1002">
+                                <span class="textbox easyui-fluid" style="width: 492px; height: 30px;">
+                                    <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 472px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1002" value="91110108779516907M" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td colspan="5">企业开展业务的主要应用服务领域代码（见下方代码）</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3">
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（A）网络销售">（A）网络销售
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（B）金融借贷">（B）金融借贷
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（C）生产制造">（C）生产制造
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（D）农业">（D）农业
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（E）生产物流">（E）生产物流
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（F）快递">（F）快递
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（G）租车约车">（G）租车约车
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（H）旅游">（H）旅游
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（I）生活服务" checked="checked">（I）生活服务
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（J）众创众筹">（J）众创众筹
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（K）科技创新和知识产权">（K）科技创新和知识产权
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（L）电子政务">（L）电子政务
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（M）卫生">（M）卫生
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（N）教育">（N）教育
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（O）网络安全">（O）网络安全
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（P）新闻和内容">（P）新闻和内容
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（Q）游戏">（Q）游戏
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（R）音乐和视频">（R）音乐和视频
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（S）社交">（S）社交
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（T）搜索">（T）搜索
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（U）呼叫中心">（U）呼叫中心
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（V）互联网数据中心（IDC）">（V）互联网数据中心（IDC）
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（W）互联网接入服务（ISP）">（W）互联网接入服务（ISP）
+                                <br>
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（X）内容分发网络（CDN）">（X）内容分发网络（CDN）
+                                <input type="checkbox" name="jg1003" class="checkbox" value="（Y）其他" checked="checked">（Y）其他</td>
+                            <td colspan="2">
+                                <div id="jg1003-1">
+                                    <span style="margin-right:5px;" id="（I）生活服务">（I）生活服务</span>,
+                                    <span style="margin-right:5px;" id="（Y）其他">（Y）其他</span>
+                                </div>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td colspan="3">法定代表人
+                                <input type="hidden" id="base_jg1004" value="彭飞">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1004" data-options="required:true,validType:'length[1,100]',value:'彭飞'" style="width: 100%; display: none;"
+                                    textboxname="jg1004">
+                                <span class="textbox easyui-fluid" style="width: 529px; height: 30px;">
+                                    <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 509px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1004" value="彭飞" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td colspan="3">（法人）联系方式（手机号码）</td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1005" data-options="required:true,validType:'phone',min:0,value:'18600020143'"
+                                    style="width: 100%; display: none;" textboxname="jg1005">
+                                <span class="textbox easyui-fluid" style="width: 560px; height: 30px;">
+                                    <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 540px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1005" value="18600020143" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td colspan="3">许可证编号
+                                <input type="hidden" id="base_jg1006" value="京ICP证161162号">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1006" data-options="required:true,validType:'length[1,100]',value:'京ICP证161162号'"
+                                    style="width: 100%; display: none;" textboxname="jg1006">
+                                <span class="textbox easyui-fluid" style="width: 588px; height: 30px;">
+                                    <input id="_easyui_textbox_input6" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 568px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1006" value="京ICP证161162号" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td colspan="3">注册住所
+                                <input type="hidden" id="base_jg1007" value="北京市海淀区悦秀路99号1单元623室">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1007" data-options="required:true,validType:'length[1,2000]',value:'北京市海淀区悦秀路99号1单元623室'"
+                                    style="width: 100%; display: none;" textboxname="jg1007">
+                                <span class="textbox easyui-fluid" style="width: 612px; height: 30px;">
+                                    <input id="_easyui_textbox_input7" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 592px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1007" value="北京市海淀区悦秀路99号1单元623室" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td colspan="3">注册属地
+                                <input type="hidden" id="base_jg1008" value="110000">
+                            </td>
+                            <td colspan="2">
+                                <input id="jg1008" class="easyui-combotree combotree-f combo-f textbox-f" data-options="url:'/FineReport/multicom/selectAreas',value:'110000'"
+                                    style="width: 100%; display: none;" textboxname="jg1008" comboname="jg1008">
+                                <span class="textbox easyui-fluid combo" style="width: 676px; height: 30px;">
+                                    <span class="textbox-addon textbox-addon-right" style="right: 0px; top: 0px;">
+                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1" style="width: 18px; height: 30px;"></a>
+                                    </span>
+                                    <input id="_easyui_textbox_input22" type="text" class="textbox-text validatebox-text validatebox-readonly" autocomplete="off"
+                                        tabindex="" readonly="readonly" placeholder="" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 638px;">
+                                    <input type="hidden" class="textbox-value" name="jg1008" value="110000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td colspan="3">联系人</td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1009" data-options="required:true,validType:'length[1,100]',value:'张学敏'" style="width: 100%; display: none;"
+                                    textboxname="jg1009">
+                                <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
+                                    <input id="_easyui_textbox_input8" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1009" value="张学敏" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td colspan="3">（联系人）联系方式（手机号码）</td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1010" data-options="required:true,validType:'phone',value:'13146948798'" style="width: 100%; display: none;"
+                                    textboxname="jg1010">
+                                <span class="textbox easyui-fluid" style="width: 649px; height: 30px;">
+                                    <input id="_easyui_textbox_input9" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 628px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1010" value="13146948798" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td colspan="3">注册资本
+                                <input type="hidden" id="base_jg1011" value="700.000000">
+                            </td>
+                            <td style="padding-left: 5px; padding-right: 5px;">万元</td>
+                            <td>
+                                <input class="easyui-textbox money textbox-f" id="jg1011" data-options="required:true,validType:'ZCZB',value:'700'" style="width: 100%; display: none;"
+                                    textboxname="jg1011">
+                                <span class="textbox easyui-fluid" style="width: 553px; height: 30px;">
+                                    <input id="_easyui_textbox_input10" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 533px; color: black;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1011" value="700" maxlength="1000" style="color: black;">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td colspan="3">许可证业务种类
+                                <input type="hidden" id="base_jg1012" value="信息服务业务（仅限互联网信息服务）">
+                            </td>
+                            <td colspan="2">
+                                <input class="easyui-textbox textbox-f" id="jg1012" data-options="required:true,validType:'length[1,2000]',multiline:true,value:'信息服务业务（仅限互联网信息服务）'"
+                                    style="width: 100%; height: 66px; display: none;" textboxname="jg1012">
+                                <span class="textbox easyui-fluid" style="width: 664px; height: 64px;">
+                                    <textarea id="_easyui_textbox_input11" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; height: 56px; width: 644px;" maxlength="2000"></textarea>
+                                    <input type="hidden" class="textbox-value" name="jg1012" value="信息服务业务（仅限互联网信息服务）" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td colspan="3">企业性质</td>
+                            <td colspan="2" style="text-align: left;">
+                                <input type="radio" name="jg1013" class="radio" value="国有控股企业" id="国有控股企业" checked="">国有控股企业
+                                <br>
+                                <input type="radio" name="jg1013" class="radio" value="民营控股企业" id="民营控股企业" checked="checked">民营控股企业
+                                <br>
+                                <input type="radio" name="jg1013" class="radio" value="外商投资企业" id="外商投资企业">外商投资企业
+                                <br>
+                            </td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">15</td>
+                            <td colspan="3" rowspan="3">上市情况</td>
+                            <td colspan="2" style="text-align: left;">
+                                <div>
+                                    <input type="radio" name="jg1014" class="radio" value="未上市 " onclick="build(1)" checked="">未上市
+                                    <input type="radio" name="jg1014" class="radio" value="新三板（股票代码）" onclick="build(2)">新三板（股票代码）
+                                    <br>
+                                    <input type="radio" name="jg1014" class="radio" value="境内上市（股票代码）" onclick="build(2)">境内上市（股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="香港上市（股票代码）" onclick="build(2)">香港上市（股票代码）
+                                    <br>
+                                    <input type="radio" name="jg1014" class="radio" value="美国上市（股票代码）" onclick="build(2)">美国上市（股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="其他地区上市（上市地区,股票代码）" onclick="build(3)">其他地区上市（上市地区,股票代码）
+                                </div>
+                            </td>
+                            <td rowspan="3">
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);">上市情况</td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg10141" data-options="readonly:true,validType:'length[1,1000]'" style="width: 100%; display: none;"
+                                    textboxname="jg10141">
+                                <span class="textbox textbox-readonly easyui-fluid" style="width: 566px; height: 30px;">
+                                    <input id="_easyui_textbox_input12" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
+                                        autocomplete="off" tabindex="" readonly="readonly" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg10141" value="" maxlength="1000">
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);">股票代码</td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg10142" data-options="readonly:true,validType:'length[1,1000]'" style="width: 100%; display: none;"
+                                    textboxname="jg10142">
+                                <span class="textbox easyui-fluid" style="width: 576px; height: 30px;">
+                                    <input id="_easyui_textbox_input28" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 556px;">
+                                    <input type="hidden" class="textbox-value" name="jg10142" value="835477" maxlength="1000">
+                                </span>
+                            </td>
+                        </tr>
+                        <tr id="17row" style="display: none;">
+                            <td>16</td>
+                            <td style="text-align: center;">分支机构名称</td>
+                            <td style="text-align: center;">分支机构地址</td>
+                            <td style="text-align: center;">省（自治区、直辖市）</td>
+                            <td style="text-align: center;">联系人</td>
+                            <td style="text-align: center;">联系方式</td>
+                            <td>
+                                <input type="checkbox" disabled="disabled" checked="checked">
+                            </td>
+                        </tr>
+
+
+                        <tr class="jg1015" style="display: none;">
+                            <td></td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg101501" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 175px; display: none;">
+                                <span class="textbox" style="width: 173px; height: 30px;">
+                                    <input id="_easyui_textbox_input23" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
+                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
+                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg101511" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 175px; display: none;">
+                                <span class="textbox" style="width: 173px; height: 30px;">
+                                    <input id="_easyui_textbox_input24" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
+                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
+                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input id="jg101521" class="easyui-combobox combobox-f combo-f textbox-f" data-options="value:'',fix:true,required:true,editable:false,prompt:'请选择',data:province,valueField:'id',textField:'text'"
+                                    style="display: none;">
+                                <span class="textbox combo" style="width: 136px; height: 30px;">
+                                    <span class="textbox-addon textbox-addon-right" style="right: 0px; top: 0px;">
+                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1" style="width: 18px; height: 30px;"></a>
+                                    </span>
+                                    <input id="_easyui_textbox_input25" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
+                                        autocomplete="off" tabindex="" readonly="readonly" placeholder="请选择" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 98px;">
+                                    <input type="hidden" class="textbox-value" name="" value="">
+                                </span>
+                            </td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg101531" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 90px; display: none;">
+                                <span class="textbox" style="width: 88px; height: 30px;">
+                                    <input id="_easyui_textbox_input26" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
+                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 68px;">
+                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg101541" data-options="value:'',required:true,validType:'phone'" style="width: 220px; display: none;">
+                                <span class="textbox" style="width: 218px; height: 30px;">
+                                    <input id="_easyui_textbox_input27" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
+                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 198px;">
+                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                </span>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="addRowEntBase(this);"
+                                    style="height: 23px; width: 33px;" group="" id="">
+                                    <span class="l-btn-left l-btn-icon-left" style="margin-top: -3px;">
+                                        <span class="l-btn-text l-btn-empty">&nbsp;</span>
+                                        <span class="l-btn-icon icon-add">&nbsp;</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:;" class="easyui-linkbutton l-btn l-btn-small l-btn-disabled" data-options="iconCls:'icon-remove',disabled:true"
+                                    onclick="delRowEntBase(this,1);" style="height: 23px; width: 33px;" group="" id="">
+                                    <span class="l-btn-left l-btn-icon-left" style="margin-top: -3px;">
+                                        <span class="l-btn-text l-btn-empty">&nbsp;</span>
+                                        <span class="l-btn-icon icon-remove">&nbsp;</span>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td id="17td">16</td>
+                            <td colspan="3">企业是否履行月报义务</td>
+                            <td colspan="2" style="text-align: left;">
+                                <input type="radio" name="jg1015X" class="radio" id="是" value="是" checked="">是
+                                <input type="radio" name="jg1015X" class="radio" value="否" id="否" checked="checked">否
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" id="18td">17</td>
+                            <td colspan="3">从业人员总数</td>
+                            <td>人</td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg1016" data-options="required:true,validType:'otherNum',value:'200'" style="width: 100%; display: none;"
+                                    textboxname="jg1016">
+                                <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
+                                    <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1016" value="200" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-left: 1px solid rgba(34, 36, 38, 0.1); text-align: left;">&nbsp;&nbsp;&nbsp;其中：研发人员</td>
+                            <td style="text-align: center;">人</td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg1017" data-options="required:true,validType:'otherNum',value:'10'" style="width: 100%; display: none;"
+                                    textboxname="jg1017">
+                                <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
+                                    <input id="_easyui_textbox_input19" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1017" value="10" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border-left: 1px solid rgba(34, 36, 38, 0.1); text-align: left;">&nbsp;&nbsp;&nbsp;其中：从事增值电信业务人员</td>
+                            <td style="text-align: center;">人</td>
+                            <td>
+                                <input class="easyui-textbox textbox-f" id="jg1018" data-options="required:true,validType:'otherNum',value:'10'" style="width: 100%; display: none;"
+                                    textboxname="jg1018">
+                                <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
+                                    <input id="_easyui_textbox_input20" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
+                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000">
+                                    <input type="hidden" class="textbox-value" name="jg1018" value="10" maxlength="1000">
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="save(0);"
+                                    id="saveTmpBtn" group="" style="display: none;">
+                                    <span class="l-btn-left l-btn-icon-left">
+                                        <span class="l-btn-text">暂存</span>
+                                        <span class="l-btn-icon icon-add">&nbsp;</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="save(1);"
+                                    id="saveBtn" group="" style="display: none;">
+                                    <span class="l-btn-left l-btn-icon-left">
+                                        <span class="l-btn-text">保存</span>
+                                        <span class="l-btn-icon icon-add">&nbsp;</span>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="../js/x-layui.js" charset="utf-8"></script>
+    <script src="../laydate/laydate.js"></script>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script>
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+        $("#_easyui_textbox_input1").html();
+        var isChange = '0';
+        var rptID = '4FB7D1EB763CC76D057DE8CE1C20F444';
+        var cptStatus = '1';
+        var saveStatus = '1';
+        var busCat = '省内';
+
+        $(function () {
+            $("input[name='jg1003']").click(function () {
+                if ($(this).attr("checked") == "checked") {
+                    if ($("input[name='jg1003']:checked").length <= 3) {
+                        var html = "";
+                        $("input[name='jg1003']:checked").each(function () {
+                            if (html != "") {
+                                html += ",";
+                            }
+                            html += "<span style ='margin-right:5px;' id = '" + $(this).val() +
+                                "'>" + $(this).val() + "</span>";
+                        });
+                        $("#jg1003-1").html(html);
+                    } else {
+                        $(this).attr("checked", false);
+                        layer.msg("最多只能选三项！", {
+                            icon: 7
+                        });
+                    }
+                } else {
+                    var html = "";
+                    $("input[name='jg1003']:checked").each(function (i, b) {
+                        if (html != "") {
+                            html += ",";
+                        }
+                        html += "<span style ='margin-right:5px;' id = '" + $(b).val() + "'>" +
+                            $(b).val() + "</span>";
+                    });
+                    $("#jg1003-1").html(html);
+                }
+            });
+            if (isChange == "0") {
+                $("#saveTmpBtn").hide();
+                $("#saveBtn").hide();
+            } else {
+                if (cptStatus == "1" || cptStatus == "2" || cptStatus == "3") {
+                    $("#saveTmpBtn").hide();
+                }
+            }
+            if (saveStatus == '0') {
+                $("#status").text("暂存");
+            }
+            if (saveStatus == '1') {
+                $("#status").text("保存");
+            }
+            if (busCat != "跨地区") {
+                $("#17row").hide();
+                $(".jg1015").hide();
+                $("#17td").text("16");
+                $("#18td").text("17");
+                $("#jg101501").textbox({
+                    required: false
+                });
+                $("#jg101511").textbox({
+                    required: false
+                });
+                $("#jg101521").combobox({
+                    required: false
+                });
+                $("#jg101531").textbox({
+                    required: false
+                });
+                $("#jg101541").textbox({
+                    required: false
+                });
+            }
+            init();
+            lalala(
+                '北京金三科技股份有限公司主营业务包括技术开发、技术服务、技术咨询、技术转让；基础软件服务；应用软件服务；代理、发布广告；计算机技术培训；销售计算机、软件及辅助设备、通讯设备、电子产品；零售、网上销售图书、报纸、期刊、电子出版物、音像制品（出版物经营许可证有效期至2015年12月31日）；互联网信息服务。',
+                '#jg1000');
+            lalala('信息服务业务（仅限互联网信息服务）', '#jg1012');
+        });
+
+
+        function init() {
+            if ('（I）生活服务,（Y）其他' != null && '（I）生活服务,（Y）其他' != "") {
+                var jg1003 = '（I）生活服务,（Y）其他'.split(",");
+                var html = "";
+                for (var i = 0; i < jg1003.length; i++) {
+                    $("input[value='" + jg1003[i] + "']").attr("checked", "checked");
+                    if (html != "") {
+                        html += ",";
+                    }
+                    html += "<span style ='margin-right:5px;' id = '" + jg1003[i] + "'>" + jg1003[i] + "</span>";
+                }
+                $("#jg1003-1").html(html);
+            }
+            if ('民营控股企业' != null && '民营控股企业' != "") {
+                $("#民营控股企业").attr("checked", "checked");
+            }
+            if ('新三板（股票代码）' != null && '新三板（股票代码）' != "") {
+                if ('新三板（股票代码）' != "其他") {
+                    if ('新三板（股票代码）' == "其他地区上市（上市地区,股票代码）") {
+                        $("input[value='新三板（股票代码）']").prop("checked", "checked");
+                        $("#jg10141").textbox({
+                            value: '',
+                            readonly: false
+                        });
+                        $("#jg10142").textbox({
+                            value: '835477',
+                            readonly: false
+                        });
+                    }
+                }
+                if ('新三板（股票代码）' == "新三板（股票代码）" || '新三板（股票代码）' == "境内上市（股票代码）" ||
+                    '新三板（股票代码）' == "美国上市（股票代码）" || '新三板（股票代码）' == "香港上市（股票代码）") {
+                    $("input[value='新三板（股票代码）']").prop("checked", "checked");
+                    $("#jg10142").textbox({
+                        value: '835477',
+                        readonly: false
+                    });
+                }
+            }
+            if ('否' != null && '否' != "") {
+                $("#否").attr("checked", "checked");
+            }
+        }
+
+        // layui.use(['element', 'layer', 'form'], function () {
+        //     $ = layui.jquery; //jquery
+        //     lement = layui.element(); //面包导航
+        //     layer = layui.layer; //弹出层
+        //     form = layui.form();
+
+        //     //监听提交
+        //     form.on('submit(add)', function (data) {
+        //         console.log(data);
+        //         //发异步，把数据提交给php
+        //         layer.alert("增加成功", {
+        //             icon: 6
+        //         });
+        //         $('#x-link').prepend(
+        //             '<tr><td><input type="checkbox"value="1"name=""></td><td>1</td><td>1</td><td>' +
+        //             data.field.name +
+        //             '</td><td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'cate-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>'
+        //         );
+        //         return false;
+        //     });
+
+
+        // })
+
+
+
+
+        //批量删除提交
+        // function delAll() {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //捉到所有被选中的，发异步进行删除
+        //         layer.msg('删除成功', {
+        //             icon: 1
+        //         });
+        //     });
+        // }
+
+        //-编辑
+        // function cate_edit(title, url, id, w, h) {
+        //     x_admin_show(title, url, w, h);
+        // }
+
+        /*-删除*/
+        // function cate_del(obj, id) {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //发异步删除数据
+        //         $(obj).parents("tr").remove();
+        //         layer.msg('已删除!', {
+        //             icon: 1,
+        //             time: 1000
+        //         });
+        //     });
+        // }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

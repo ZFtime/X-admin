@@ -1,0 +1,21 @@
+.x-left {
+    float: left;
+}
+
+.demo-input {
+    padding-left: 10px;
+    height: 38px;
+    min-width: 262px;
+    line-height: 38px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.b-table{
+    padding: 5px;
+    box-sizing: border-box;
+}
+.b-table th{
+    text-align: center;
+    vertical-align: middle;
+}

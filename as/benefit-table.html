@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        基本情况表格
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="stylesheet" href="/css/as.css">
+    <link rel="stylesheet" href="/lib/layui/css/laydate.css">
+</head>
+
+<body>
+    <div class="b-nav">
+        <xblock>
+            <div class="x-left">
+                <span>年份选择：</span>
+                <input type="text" class="demo-input" placeholder="请选择日期" id="test1">
+            </div>
+            <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                下载模板</button>
+            <!-- <button class="layui-btn" onclick="banner_add('添加用户','banner-add.html','600','500')">
+                <i class="layui-icon"></i>添加</button> -->
+            <div class="x-right" style="line-height:40px">上报状态：
+                <span>已上报</span>
+            </div>
+        </xblock>
+    </div>
+    <div class="b-body">
+        <div class="b-table">
+            <table class="layui-table">
+                <tbody>
+                    <tr>
+                        <th colspan="5" style="font-size: 16px;padding:5px;text-align:center;">企业经济效益（经济效益指标由企业选择是否公示）
+                            <span style=" float: right; font-size: 10px; font-weight: normal; margin-top:10px;margin-right:10px;">
+                                <span style="float:left;">保存状态：</span>
+                                <span style="float:right;" id="saveStatus">保存</span>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width:10%;">序号</td>
+                        <td style="width:20%;">指标名称</td>
+                        <td style="width:10%;">单位</td>
+                        <td style="width:50%;">实际</td>
+                        <td style="width:10%;">是否公示</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>营业收入</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1025" data-options="validType:'otherCode',value:'1521',required:true,prompt:'指报告期内企业经营主要业务和其他业务所取得的收入总额。'"
+                                style="width: 100%; display: none;" textboxname="jg1025">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input1" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业经营主要业务和其他业务所取得的收入总额。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1025" value="1521" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="hidden" name="jg10251" value="">
+                            <input type="checkbox" id="jg10251" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>营业成本</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1026" data-options="validType:'otherCode',value:'400',required:true,prompt:'指报告期内企业经营主要业务和其他业务所发生的成本总额。'"
+                                style="width: 100%; display: none;" textboxname="jg1026">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业经营主要业务和其他业务所发生的成本总额。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1026" value="400" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="hidden" name="jg10261" value="">
+                            <input type="checkbox" id="jg10261" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>营业利润</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1027" data-options="validType:'otherCode',value:'1121',required:true,prompt:'指报告期内企业从事生产经营活动所取得的利润。'"
+                                style="width: 100%; display: none;" textboxname="jg1027">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业从事生产经营活动所取得的利润。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1027" value="1121" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>电信业务收入</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1028" data-options="value:'128',required:true,prompt:'指报告期内企业经营电信业务所获得业务收入的总和。',validType:['otherCode','JGVAL[\'#jg1025\',\'营业收入应大于等于电信业务收入\']']"
+                                style="width: 100%; display: none;" textboxname="jg1028">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业经营电信业务所获得业务收入的总和。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1028" value="128" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                            <input type="hidden" name="jg10281" value="">
+                            <input type="checkbox" id="jg10281" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>电信业务成本</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1029" data-options="validType:'otherCode',value:'98',required:true,prompt:'指报告期内企业经营电信业务所发生的成本总额。'"
+                                style="width: 100%; display: none;" textboxname="jg1029">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业经营电信业务所发生的成本总额。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1029" value="98" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>电信业务利润</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1030" data-options="validType:'otherCode',value:'30',required:true,prompt:'指报告期内企业从事电信业务所取得的利润。'"
+                                style="width: 100%; display: none;" textboxname="jg1030">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input6" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业从事电信业务所取得的利润。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1030" value="30" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>应交增值税</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1031" data-options="validType:'number',value:'23',required:true,prompt:'指报告期内企业销售货物或者提供加工、修理修配劳务活动本期应交纳的增值税。'"
+                                style="width: 100%; display: none;" textboxname="jg1031">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input7" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业销售货物或者提供加工、修理修配劳务活动本期应交纳的增值税。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1031" value="23" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>销售费用</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1032" data-options="validType:'number',value:'12',required:true,prompt:'指报告期内企业销售商品和材料、提供劳务的过程中发生的各种费用，包括保险费、包装费、展览费和广告费、商品维修费、预计产品质量保证损失、运输费、装卸费等以及为销售本企业商品而专设的销售机构（含销售网点、售后服务网点等）的职工薪酬、业务费、折旧费等经营费用。'"
+                                style="width: 100%; display: none;" textboxname="jg1032">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input8" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业销售商品和材料、提供劳务的过程中发生的各种费用，包括保险费、包装费、展览费和广告费、商品维修费、预计产品质量保证损失、运输费、装卸费等以及为销售本企业商品而专设的销售机构（含销售网点、售后服务网点等）的职工薪酬、业务费、折旧费等经营费用。"
+                                    maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1032" value="12" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">9</td>
+                        <td>管理费用</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1033" data-options="validType:'number',value:'48',required:true,prompt:'指报告期内企业为组织和管理企业生产经营活动所发生的费用，包括企业的董事会和行政管理部门在企业经营管理中发生的，或者应当由企业统一负担的各项管理费用。'"
+                                style="width: 100%; display: none;" textboxname="jg1033">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input9" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业为组织和管理企业生产经营活动所发生的费用，包括企业的董事会和行政管理部门在企业经营管理中发生的，或者应当由企业统一负担的各项管理费用。"
+                                    maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1033" value="48" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;"> 其中：税金</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1034" data-options="value:'8',required:true,prompt:'指报告期内企业按照规定从管理费用中支付的房产税、印花税、车船使用税和土地使用税。',validType:['number','JGVAL[\'#jg1033\',\'#jg1035\',\'管理费用应大于等于其子项之和\']']"
+                                style="width: 100%; display: none;" textboxname="jg1034">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input10" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业按照规定从管理费用中支付的房产税、印花税、车船使用税和土地使用税。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1034" value="8" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;">其中：差旅费</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1035" data-options="value:'36',required:true,prompt:'指报告期内企业行政管理部门的差旅费，包括市内公出的交通费和外地出差的差旅费。',validType:['number','JGVAL[\'#jg1033\',\'#jg1034\',\'管理费用应大于等于其子项之和\']','length[0,100]']"
+                                style="width: 100%; display: none;" textboxname="jg1035">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input11" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业行政管理部门的差旅费，包括市内公出的交通费和外地出差的差旅费。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1035" value="36" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">10</td>
+                        <td>财务费用</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1036" data-options="validType:'number',value:'2',required:true,prompt:'指报告期内企业为筹集生产经营所需资金等而发生的费用，包括企业生产经营期间发生的利息支出(减利息收入）、汇兑损失(减汇兑收益）以及相关的手续费等。'"
+                                style="width: 100%; display: none;" textboxname="jg1036">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input12" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业为筹集生产经营所需资金等而发生的费用，包括企业生产经营期间发生的利息支出(减利息收入）、汇兑损失(减汇兑收益）以及相关的手续费等。"
+                                    maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1036" value="2" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;">其中：利息支出</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1037" data-options="value:'1',required:true,prompt:'指报告期内企业短期借款利息、长期借款利息、应付票据利息、票据贴现利息、应付债券利息、长期应付引进国外设备款利息等利息支出。',validType:['number','JGVAL[\'#jg1036\',\'财务费用应大于等于其子项之和\']','length[0,100]']"
+                                style="width: 100%; display: none;" textboxname="jg1037">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input13" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业短期借款利息、长期借款利息、应付票据利息、票据贴现利息、应付债券利息、长期应付引进国外设备款利息等利息支出。" maxlength="1000"
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1037" value="1" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>公允价值变动</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1038" data-options="validType:'number',value:'0',required:true,prompt:'指报告期内企业的交易性金融资产、交易性金融负债，以及采用公允价值模式计量的投资性房地产、衍生工具、套期保值业务等公允价值变动形成的应计入当期损益的利得或损失。'"
+                                style="width: 100%; display: none;" textboxname="jg1038">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input14" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业的交易性金融资产、交易性金融负债，以及采用公允价值模式计量的投资性房地产、衍生工具、套期保值业务等公允价值变动形成的应计入当期损益的利得或损失。"
+                                    maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1038" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>投资收益</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1039" data-options="validType:'number',value:'0',required:true,prompt:'指报告期内企业确认的投资收益或投资损失，反映企业以各种方式对外投资所取得的收益。'"
+                                style="width: 100%; display: none;" textboxname="jg1039">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input15" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业确认的投资收益或投资损失，反映企业以各种方式对外投资所取得的收益。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1039" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>企业所得税</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1040" data-options="validType:'number',value:'34',required:true,prompt:'指报告期内企业实现利润按照国家税法规定应上缴的所得税。'"
+                                style="width: 100%; display: none;" textboxname="jg1040">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input16" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业实现利润按照国家税法规定应上缴的所得税。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1040" value="34" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>应付职工薪酬</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1041" data-options="validType:'number',value:'892',required:true,prompt:'指报告期内企业因职工提供服务而支付或放弃的所有对价。包括职工工资、奖金、津贴和补贴，职工福利费，医疗保险费、养老保险费、失业保险费、工伤保险费和生育保险费等社会保险费，住房公积金，工会经费和职工教育经费，非货币性福利，因解除与职工的劳动关系给予的补偿，其他与获得职工提供的服务相关的支出。'"
+                                style="width: 100%; display: none;" textboxname="jg1041">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input17" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指报告期内企业因职工提供服务而支付或放弃的所有对价。包括职工工资、奖金、津贴和补贴，职工福利费，医疗保险费、养老保险费、失业保险费、工伤保险费和生育保险费等社会保险费，住房公积金，工会经费和职工教育经费，非货币性福利，因解除与职工的劳动关系给予的补偿，其他与获得职工提供的服务相关的支出。"
+                                    maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1041" value="892" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>固定资产总计</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1042" data-options="validType:'otherCode',value:'30',required:true,prompt:'指企业所有固定资产的总额。'"
+                                style="width: 100%; display: none;" textboxname="jg1042">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指企业所有固定资产的总额。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1042" value="30" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>负债合计</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1043" data-options="validType:'otherCode',value:'55',required:true,prompt:'指企业所有负债的总额。'"
+                                style="width: 100%; display: none;" textboxname="jg1043">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input19" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指企业所有负债的总额。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1043" value="55" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>存货</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1044" data-options="validType:'number',value:'0',required:true,prompt:'指企业在日常活动中持有以备出售的产成品或商品、处在生产过程中的在产品、在生产过程或提供劳务过程中耗用的材料或物料等。'"
+                                style="width: 100%; display: none;" textboxname="jg1044">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input20" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指企业在日常活动中持有以备出售的产成品或商品、处在生产过程中的在产品、在生产过程或提供劳务过程中耗用的材料或物料等。" maxlength="1000"
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1044" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">18</td>
+                        <td>固定资产累计折旧</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1045" data-options="validType:'otherCode',value:'0',required:true,prompt:'指企业累计固定资产折旧合计数。'"
+                                style="width: 100%; display: none;" textboxname="jg1045">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input21" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指企业累计固定资产折旧合计数。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1045" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;">其中：本年折旧</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1046" data-options="value:'0',required:true,prompt:'指企业在报告期内提取的固定资产折旧合计数。',validType:['number','JGVAL[\'#jg1045\',\'固定资产累积折旧应大于等于其子项之和\']','length[0,100]']"
+                                style="width: 100%; display: none;" textboxname="jg1046">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input22" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指企业在报告期内提取的固定资产折旧合计数。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1046" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>研发费用</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1047" data-options="validType:'number',value:'32',required:true,prompt:'指在报告期内企业内部用于全部研发活动的直接支出，以及用于研发活动的管理费、服务费以及外协加工费等支出。'"
+                                style="width: 100%; display: none;" textboxname="jg1047">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input23" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="指在报告期内企业内部用于全部研发活动的直接支出，以及用于研发活动的管理费、服务费以及外协加工费等支出。" maxlength="1000"
+                                    style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1047" value="32" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">20</td>
+                        <td>固定资产投资</td>
+                        <td>万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1048" data-options="validType:'otherCode',value:'0',required:true,prompt:'是指以货币形式表现的在一定时期内建造和购置固定资产的工作量以及有关的费用总称。'"
+                                style="width: 100%; display: none;" textboxname="jg1048">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input24" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="是指以货币形式表现的在一定时期内建造和购置固定资产的工作量以及有关的费用总称。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1048" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;">其中：互联网数据中心机房设施投资</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1049" data-options="value:'0',required:true,prompt:'是指互联网数据中心企业用于机房设施建设的固定资产投资。',validType:['number','JGVAL[\'#jg1048\',\'#jg1050\',\'固定资产投资应大于等于其子项之和\']','length[0,100]']"
+                                style="width: 100%; display: none;" textboxname="jg1049">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input25" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="是指互联网数据中心企业用于机房设施建设的固定资产投资。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1049" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;border-left: 1px solid rgba(34, 36, 38, 0.1);text-indent: 30px;">其中：互联网宽带接入投资</td>
+                        <td style="text-align:center;">万元</td>
+                        <td>
+                            <input class="easyui-textbox money textbox-f" id="jg1050" data-options="value:'0',required:true,prompt:'是指互联网接入服务业务企业用于互联网宽带网络建设的固定资产投资。',validType:['number','JGVAL[\'#jg1048\',\'#jg1049\',\'固定资产投资应大于等于其子项之和\']','length[0,100]']"
+                                style="width: 100%; display: none;" textboxname="jg1050">
+                            <span class="textbox easyui-fluid" style="width: 730px; height: 30px;">
+                                <input id="_easyui_textbox_input26" type="text" class="textbox-text validatebox-text" autocomplete="off"
+                                    tabindex="" placeholder="是指互联网接入服务业务企业用于互联网宽带网络建设的固定资产投资。" maxlength="1000" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 710px; color: black;">
+                                <input type="hidden" class="textbox-value" name="jg1050" value="0" maxlength="1000" style="color: black;">
+                            </span>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" id="saveTmpBtn"
+                                onclick="temporary();" group="" style="display: none;">
+                                <span class="l-btn-left l-btn-icon-left">
+                                    <span class="l-btn-text">暂存</span>
+                                    <span class="l-btn-icon icon-add">&nbsp;</span>
+                                </span>
+                            </a>
+                            <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" id="saveBtn"
+                                onclick="add();" group="" style="display: none;">
+                                <span class="l-btn-left l-btn-icon-left">
+                                    <span class="l-btn-text">保存</span>
+                                    <span class="l-btn-icon icon-add">&nbsp;</span>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/x-layui.js" charset="utf-8"></script>
+    <script src="../laydate/laydate.js"></script>
+    <script>
+        laydate.render({
+            elem: '#test1' //指定元素
+        });
+
+        // layui.use(['element', 'layer', 'form'], function () {
+        //     $ = layui.jquery; //jquery
+        //     lement = layui.element(); //面包导航
+        //     layer = layui.layer; //弹出层
+        //     form = layui.form();
+
+        //     //监听提交
+        //     form.on('submit(add)', function (data) {
+        //         console.log(data);
+        //         //发异步，把数据提交给php
+        //         layer.alert("增加成功", {
+        //             icon: 6
+        //         });
+        //         $('#x-link').prepend(
+        //             '<tr><td><input type="checkbox"value="1"name=""></td><td>1</td><td>1</td><td>' +
+        //             data.field.name +
+        //             '</td><td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'cate-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>'
+        //         );
+        //         return false;
+        //     });
+
+
+        // })
+
+
+
+
+        //批量删除提交
+        // function delAll() {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //捉到所有被选中的，发异步进行删除
+        //         layer.msg('删除成功', {
+        //             icon: 1
+        //         });
+        //     });
+        // }
+
+        //-编辑
+        // function cate_edit(title, url, id, w, h) {
+        //     x_admin_show(title, url, w, h);
+        // }
+
+        /*-删除*/
+        // function cate_del(obj, id) {
+        //     layer.confirm('确认要删除吗？', function (index) {
+        //         //发异步删除数据
+        //         $(obj).parents("tr").remove();
+        //         layer.msg('已删除!', {
+        //             icon: 1,
+        //             time: 1000
+        //         });
+        //     });
+        // }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+
+</html>

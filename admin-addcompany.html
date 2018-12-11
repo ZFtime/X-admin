@@ -63,8 +63,7 @@
             company_name: data.field.username
           },
           success: function (res) {
-            var status = res.code;
-            sessionStorage.setItem("company_status", status);
+            // console.log('我的公司'+JSON.stringify(res))
             if (res.code === 1) {
               $(".username_error").html(
                 '<span class="x-red">' + "该公司不存在" + "</span>"
@@ -77,12 +76,13 @@
                 htmlStr +=
                   "<tr>" +
                   "<td>" + element + "</td>" +
-                  '<td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'link-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>' +
+                  '<td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'link-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td>' +
                   "</tr>";
               });
               sessionStorage.setItem("htmlStr", htmlStr);
               var status = res.code;
               sessionStorage.setItem('status', status);
+              // console.log(status)
               parent.layer.close(index);
               // $("#tbody"padding: 8px 14px;).css({
               //     background: red

@@ -12,9 +12,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="/css/x-admin.css" media="all">
-    <link rel="stylesheet" href="/css/as.css">
-    <link rel="stylesheet" href="/lib/layui/css/laydate.css">
+    <link rel="stylesheet" href="../css/x-admin.css" media="all">
+    <link rel="stylesheet" href="../css/as.css">
+    <link rel="stylesheet" href="../lib/layui/css/laydate.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
     <div class="b-body">
         <div class="b-table">
             <form id="entBaseForm" action="" method="post" data-options="novalidate:true" style="padding: 10px;" class="easyui-form">
-                    <input type= "hidden"  name = "cptId" value ="4FB7D1EB763CC76D057DE8CE1C20F444">
+                <input type="hidden" name="cptId" value="4FB7D1EB763CC76D057DE8CE1C20F444">
                 <table class="layui-table">
                     <tbody>
                         <tr>
@@ -61,10 +61,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1000" value="" data-options="required:true,validType:'length[1,1000]',maxLength:'1000',multiline:true"
                                     style="width: 100%; height: 60px; display: none;" textboxname="jg1000">
                                 <span class="textbox easyui-fluid" style="width: 400px; height: 58px;">
-                                    <textarea id="_easyui_textbox_input1" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; height: 50px; width: 380px;" maxlength="2000"></textarea>
-                                    <input type="hidden" class="textbox-value" name="jg1000" value="北京金三科技股份有限公司主营业务包括技术开发、技术服务、技术咨询、技术转让；基础软件服务；应用软件服务；代理、发布广告；计算机技术培训；销售计算机、软件及辅助设备、通讯设备、电子产品；零售、网上销售图书、报纸、期刊、电子出版物、音像制品（出版物经营许可证有效期至2015年12月31日）；互联网信息服务。"
-                                        maxlength="1000">
+                                    <textarea id="_easyui_textbox_input1" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; height: 50px; width: 380px;"
+                                        maxlength="2000"></textarea>
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1000" value="北京金三科技股份有限公司主营业务包括技术开发、技术服务、技术咨询、技术转让；基础软件服务；应用软件服务；代理、发布广告；计算机技术培训；销售计算机、软件及辅助设备、通讯设备、电子产品；零售、网上销售图书、报纸、期刊、电子出版物、音像制品（出版物经营许可证有效期至2015年12月31日）；互联网信息服务。"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -72,16 +73,17 @@
                         <tr>
                             <td>2</td>
                             <td colspan="3">企业名称
-                                <input type="hidden" id="base_jg1001" value="北京金三科技股份有限公司">
+                                <!-- <input type="hidden" id="base_jg1001" value="北京金三科技股份有限公司"> -->
                             </td>
                             <td colspan="2">
                                 <input class="easyui-textbox textbox-f" id="jg1001" data-options="required:true,validType:'length[1,100]',value:'北京金三科技股份有限公司'"
                                     style="width: 100%; display: none;" textboxname="jg1001">
                                 <span class="textbox easyui-fluid" style="width: 450px; height: 30px;">
-                                    <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 430px;"
+                                    <input id="_easyui_textbox_input2" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 430px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1001" value="北京金三科技股份有限公司" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1001" value="北京金三科技股份有限公司"
+                                        maxlength="1000"> -->
                                 </span>
 
                             </td>
@@ -89,7 +91,7 @@
                                 <input type="checkbox" disabled="disabled" checked="checked">
                             </td>
                         </tr>
-                        <tr>
+                        <tr> 
                             <td>3</td>
                             <td colspan="3">统一社会信用代码
                                 <input type="hidden" id="base_jg1002" value="91110108779516907M">
@@ -98,10 +100,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1002" data-options="required:true,validType:'codeVLI',value:'91110108779516907M'"
                                     style="width: 100%; display: none;" textboxname="jg1002">
                                 <span class="textbox easyui-fluid" style="width: 492px; height: 30px;">
-                                    <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 472px;"
+                                    <input id="_easyui_textbox_input3" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 472px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1002" value="91110108779516907M" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1002" value="91110108779516907M"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -163,13 +166,13 @@
                                 <input type="hidden" id="base_jg1004" value="彭飞">
                             </td>
                             <td colspan="2">
-                                <input class="easyui-textbox textbox-f" id="jg1004" data-options="required:true,validType:'length[1,100]',value:'彭飞'" style="width: 100%; display: none;"
-                                    textboxname="jg1004">
+                                <input class="easyui-textbox textbox-f" id="jg1004" data-options="required:true,validType:'length[1,100]',value:'彭飞'"
+                                    style="width: 100%; display: none;" textboxname="jg1004">
                                 <span class="textbox easyui-fluid" style="width: 529px; height: 30px;">
-                                    <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 509px;"
+                                    <input id="_easyui_textbox_input4" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 509px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1004" value="彭飞" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1004" value="彭飞" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -183,10 +186,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1005" data-options="required:true,validType:'phone',min:0,value:'18600020143'"
                                     style="width: 100%; display: none;" textboxname="jg1005">
                                 <span class="textbox easyui-fluid" style="width: 560px; height: 30px;">
-                                    <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 540px;"
+                                    <input id="_easyui_textbox_input5" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 540px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1005" value="18600020143" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1005" value="18600020143"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -200,10 +204,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1006" data-options="required:true,validType:'length[1,100]',value:'京ICP证161162号'"
                                     style="width: 100%; display: none;" textboxname="jg1006">
                                 <span class="textbox easyui-fluid" style="width: 588px; height: 30px;">
-                                    <input id="_easyui_textbox_input6" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 568px;"
+                                    <input id="_easyui_textbox_input6" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 568px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1006" value="京ICP证161162号" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1006" value="京ICP证161162号"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -219,10 +224,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1007" data-options="required:true,validType:'length[1,2000]',value:'北京市海淀区悦秀路99号1单元623室'"
                                     style="width: 100%; display: none;" textboxname="jg1007">
                                 <span class="textbox easyui-fluid" style="width: 612px; height: 30px;">
-                                    <input id="_easyui_textbox_input7" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 592px;"
+                                    <input id="_easyui_textbox_input7" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 592px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1007" value="北京市海淀区悦秀路99号1单元623室" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1007" value="北京市海淀区悦秀路99号1单元623室"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -239,11 +245,12 @@
                                     style="width: 100%; display: none;" textboxname="jg1008" comboname="jg1008">
                                 <span class="textbox easyui-fluid combo" style="width: 676px; height: 30px;">
                                     <span class="textbox-addon textbox-addon-right" style="right: 0px; top: 0px;">
-                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1" style="width: 18px; height: 30px;"></a>
+                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1"
+                                            style="width: 18px; height: 30px;"></a>
                                     </span>
-                                    <input id="_easyui_textbox_input22" type="text" class="textbox-text validatebox-text validatebox-readonly" autocomplete="off"
-                                        tabindex="" readonly="readonly" placeholder="" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 638px;">
-                                    <input type="hidden" class="textbox-value" name="jg1008" value="110000">
+                                    <input id="_easyui_textbox_input22" type="text" class="textbox-text validatebox-text validatebox-readonly"
+                                        autocomplete="off" tabindex="" readonly="readonly" placeholder="" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 638px;">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1008" value="110000"> -->
                                 </span>
                             </td>
                             <td>
@@ -254,13 +261,13 @@
                             <td>10</td>
                             <td colspan="3">联系人</td>
                             <td colspan="2">
-                                <input class="easyui-textbox textbox-f" id="jg1009" data-options="required:true,validType:'length[1,100]',value:'张学敏'" style="width: 100%; display: none;"
-                                    textboxname="jg1009">
+                                <input class="easyui-textbox textbox-f" id="jg1009" data-options="required:true,validType:'length[1,100]',value:'张学敏'"
+                                    style="width: 100%; display: none;" textboxname="jg1009">
                                 <span class="textbox easyui-fluid" style="width: 632px; height: 30px;">
-                                    <input id="_easyui_textbox_input8" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px;"
+                                    <input id="_easyui_textbox_input8" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 612px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1009" value="张学敏" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1009" value="张学敏" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -269,13 +276,14 @@
                             <td>11</td>
                             <td colspan="3">（联系人）联系方式（手机号码）</td>
                             <td colspan="2">
-                                <input class="easyui-textbox textbox-f" id="jg1010" data-options="required:true,validType:'phone',value:'13146948798'" style="width: 100%; display: none;"
-                                    textboxname="jg1010">
+                                <input class="easyui-textbox textbox-f" id="jg1010" data-options="required:true,validType:'phone',value:'13146948798'"
+                                    style="width: 100%; display: none;" textboxname="jg1010">
                                 <span class="textbox easyui-fluid" style="width: 649px; height: 30px;">
-                                    <input id="_easyui_textbox_input9" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 628px;"
+                                    <input id="_easyui_textbox_input9" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 628px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1010" value="13146948798" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1010" value="13146948798"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -287,13 +295,14 @@
                             </td>
                             <td style="padding-left: 5px; padding-right: 5px;">万元</td>
                             <td>
-                                <input class="easyui-textbox money textbox-f" id="jg1011" data-options="required:true,validType:'ZCZB',value:'700'" style="width: 100%; display: none;"
-                                    textboxname="jg1011">
+                                <input class="easyui-textbox money textbox-f" id="jg1011" data-options="required:true,validType:'ZCZB',value:'700'"
+                                    style="width: 100%; display: none;" textboxname="jg1011">
                                 <span class="textbox easyui-fluid" style="width: 553px; height: 30px;">
-                                    <input id="_easyui_textbox_input10" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 533px; color: black;"
+                                    <input id="_easyui_textbox_input10" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 533px; color: black;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1011" value="700" maxlength="1000" style="color: black;">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1011" value="700" maxlength="1000"
+                                        style="color: black;"> -->
                                 </span>
                             </td>
                             <td>
@@ -309,9 +318,11 @@
                                 <input class="easyui-textbox textbox-f" id="jg1012" data-options="required:true,validType:'length[1,2000]',multiline:true,value:'信息服务业务（仅限互联网信息服务）'"
                                     style="width: 100%; height: 66px; display: none;" textboxname="jg1012">
                                 <span class="textbox easyui-fluid" style="width: 664px; height: 64px;">
-                                    <textarea id="_easyui_textbox_input11" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; height: 56px; width: 644px;" maxlength="2000"></textarea>
-                                    <input type="hidden" class="textbox-value" name="jg1012" value="信息服务业务（仅限互联网信息服务）" maxlength="1000">
+                                    <textarea id="_easyui_textbox_input11" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; height: 56px; width: 644px;"
+                                        maxlength="2000"></textarea>
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1012" value="信息服务业务（仅限互联网信息服务）"
+                                        maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -338,7 +349,8 @@
                             <td colspan="3" rowspan="3">上市情况</td>
                             <td colspan="2" style="text-align: left;">
                                 <div>
-                                    <input type="radio" name="jg1014" class="radio" value="未上市 " onclick="build(1)" checked="">未上市
+                                    <input type="radio" name="jg1014" class="radio" value="未上市 " onclick="build(1)"
+                                        checked="">未上市
                                     <input type="radio" name="jg1014" class="radio" value="新三板（股票代码）" onclick="build(2)">新三板（股票代码）
                                     <br>
                                     <input type="radio" name="jg1014" class="radio" value="境内上市（股票代码）" onclick="build(2)">境内上市（股票代码）
@@ -355,25 +367,25 @@
                         <tr>
                             <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);">上市情况</td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg10141" data-options="readonly:true,validType:'length[1,1000]'" style="width: 100%; display: none;"
-                                    textboxname="jg10141">
+                                <input class="easyui-textbox textbox-f" id="jg10141" data-options="readonly:true,validType:'length[1,1000]'"
+                                    style="width: 100%; display: none;" textboxname="jg10141">
                                 <span class="textbox textbox-readonly easyui-fluid" style="width: 566px; height: 30px;">
                                     <input id="_easyui_textbox_input12" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
                                         autocomplete="off" tabindex="" readonly="readonly" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg10141" value="" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg10141" value="" maxlength="1000"> -->
                                 </span>
                             </td>
                         </tr>
                         <tr>
                             <td style="border-left: 1px solid rgba(34, 36, 38, 0.1);">股票代码</td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg10142" data-options="readonly:true,validType:'length[1,1000]'" style="width: 100%; display: none;"
-                                    textboxname="jg10142">
+                                <input class="easyui-textbox textbox-f" id="jg10142" data-options="readonly:true,validType:'length[1,1000]'"
+                                    style="width: 100%; display: none;" textboxname="jg10142">
                                 <span class="textbox easyui-fluid" style="width: 576px; height: 30px;">
-                                    <input id="_easyui_textbox_input28" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 556px;">
-                                    <input type="hidden" class="textbox-value" name="jg10142" value="835477" maxlength="1000">
+                                    <input id="_easyui_textbox_input28" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 556px;">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg10142" value="835477" maxlength="1000"> -->
                                 </span>
                             </td>
                         </tr>
@@ -393,19 +405,21 @@
                         <tr class="jg1015" style="display: none;">
                             <td></td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg101501" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 175px; display: none;">
+                                <input class="easyui-textbox textbox-f" id="jg101501" data-options="value:'',required:true,validType:'length[1,100]'"
+                                    style="width: 175px; display: none;">
                                 <span class="textbox" style="width: 173px; height: 30px;">
-                                    <input id="_easyui_textbox_input23" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
-                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
-                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                    <input id="_easyui_textbox_input23" type="text" class="textbox-text validatebox-text textbox-prompt"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
+                                    <!-- <input type="hidden" class="textbox-value" value="" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg101511" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 175px; display: none;">
+                                <input class="easyui-textbox textbox-f" id="jg101511" data-options="value:'',required:true,validType:'length[1,100]'"
+                                    style="width: 175px; display: none;">
                                 <span class="textbox" style="width: 173px; height: 30px;">
-                                    <input id="_easyui_textbox_input24" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
-                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
-                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                    <input id="_easyui_textbox_input24" type="text" class="textbox-text validatebox-text textbox-prompt"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 153px;">
+                                    <!-- <input type="hidden" class="textbox-value" value="" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
@@ -413,39 +427,43 @@
                                     style="display: none;">
                                 <span class="textbox combo" style="width: 136px; height: 30px;">
                                     <span class="textbox-addon textbox-addon-right" style="right: 0px; top: 0px;">
-                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1" style="width: 18px; height: 30px;"></a>
+                                        <a href="javascript:;" class="textbox-icon combo-arrow" icon-index="0" tabindex="-1"
+                                            style="width: 18px; height: 30px;"></a>
                                     </span>
                                     <input id="_easyui_textbox_input25" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
                                         autocomplete="off" tabindex="" readonly="readonly" placeholder="请选择" style="margin: 0px 30px 0px 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 98px;">
-                                    <input type="hidden" class="textbox-value" name="" value="">
+                                    <!-- <input type="hidden" class="textbox-value" name="" value=""> -->
                                 </span>
                             </td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg101531" data-options="value:'',required:true,validType:'length[1,100]'" style="width: 90px; display: none;">
+                                <input class="easyui-textbox textbox-f" id="jg101531" data-options="value:'',required:true,validType:'length[1,100]'"
+                                    style="width: 90px; display: none;">
                                 <span class="textbox" style="width: 88px; height: 30px;">
-                                    <input id="_easyui_textbox_input26" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
-                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 68px;">
-                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                    <input id="_easyui_textbox_input26" type="text" class="textbox-text validatebox-text textbox-prompt"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 68px;">
+                                    <!-- <input type="hidden" class="textbox-value" value="" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg101541" data-options="value:'',required:true,validType:'phone'" style="width: 220px; display: none;">
+                                <input class="easyui-textbox textbox-f" id="jg101541" data-options="value:'',required:true,validType:'phone'"
+                                    style="width: 220px; display: none;">
                                 <span class="textbox" style="width: 218px; height: 30px;">
-                                    <input id="_easyui_textbox_input27" type="text" class="textbox-text validatebox-text textbox-prompt" autocomplete="off" tabindex=""
-                                        placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 198px;">
-                                    <input type="hidden" class="textbox-value" value="" maxlength="1000">
+                                    <input id="_easyui_textbox_input27" type="text" class="textbox-text validatebox-text textbox-prompt"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 198px;">
+                                    <!-- <input type="hidden" class="textbox-value" value="" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td>
-                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="addRowEntBase(this);"
-                                    style="height: 23px; width: 33px;" group="" id="">
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'"
+                                    onclick="addRowEntBase(this);" style="height: 23px; width: 33px;" group="" id="">
                                     <span class="l-btn-left l-btn-icon-left" style="margin-top: -3px;">
                                         <span class="l-btn-text l-btn-empty">&nbsp;</span>
                                         <span class="l-btn-icon icon-add">&nbsp;</span>
                                     </span>
                                 </a>
-                                <a href="javascript:;" class="easyui-linkbutton l-btn l-btn-small l-btn-disabled" data-options="iconCls:'icon-remove',disabled:true"
-                                    onclick="delRowEntBase(this,1);" style="height: 23px; width: 33px;" group="" id="">
+                                <a href="javascript:;" class="easyui-linkbutton l-btn l-btn-small l-btn-disabled"
+                                    data-options="iconCls:'icon-remove',disabled:true" onclick="delRowEntBase(this,1);"
+                                    style="height: 23px; width: 33px;" group="" id="">
                                     <span class="l-btn-left l-btn-icon-left" style="margin-top: -3px;">
                                         <span class="l-btn-text l-btn-empty">&nbsp;</span>
                                         <span class="l-btn-icon icon-remove">&nbsp;</span>
@@ -468,13 +486,13 @@
                             <td colspan="3">从业人员总数</td>
                             <td>人</td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg1016" data-options="required:true,validType:'otherNum',value:'200'" style="width: 100%; display: none;"
-                                    textboxname="jg1016">
+                                <input class="easyui-textbox textbox-f" id="jg1016" data-options="required:true,validType:'otherNum',value:'200'"
+                                    style="width: 100%; display: none;" textboxname="jg1016">
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
-                                    <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                    <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1016" value="200" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1016" value="200" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -483,13 +501,13 @@
                             <td colspan="3" style="border-left: 1px solid rgba(34, 36, 38, 0.1); text-align: left;">&nbsp;&nbsp;&nbsp;其中：研发人员</td>
                             <td style="text-align: center;">人</td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg1017" data-options="required:true,validType:'otherNum',value:'10'" style="width: 100%; display: none;"
-                                    textboxname="jg1017">
+                                <input class="easyui-textbox textbox-f" id="jg1017" data-options="required:true,validType:'otherNum',value:'10'"
+                                    style="width: 100%; display: none;" textboxname="jg1017">
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
-                                    <input id="_easyui_textbox_input19" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                    <input id="_easyui_textbox_input19" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1017" value="10" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1017" value="10" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
@@ -498,28 +516,28 @@
                             <td colspan="3" style="border-left: 1px solid rgba(34, 36, 38, 0.1); text-align: left;">&nbsp;&nbsp;&nbsp;其中：从事增值电信业务人员</td>
                             <td style="text-align: center;">人</td>
                             <td>
-                                <input class="easyui-textbox textbox-f" id="jg1018" data-options="required:true,validType:'otherNum',value:'10'" style="width: 100%; display: none;"
-                                    textboxname="jg1018">
+                                <input class="easyui-textbox textbox-f" id="jg1018" data-options="required:true,validType:'otherNum',value:'10'"
+                                    style="width: 100%; display: none;" textboxname="jg1018">
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
-                                    <input id="_easyui_textbox_input20" type="text" class="textbox-text validatebox-text" autocomplete="off" tabindex="" placeholder=""
-                                        style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                    <input id="_easyui_textbox_input20" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
-                                    <input type="hidden" class="textbox-value" name="jg1018" value="10" maxlength="1000">
+                                    <!-- <input type="hidden" class="textbox-value" name="jg1018" value="10" maxlength="1000"> -->
                                 </span>
                             </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td colspan="7">
-                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="save(0);"
-                                    id="saveTmpBtn" group="" style="display: none;">
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'"
+                                    onclick="save(0);" id="saveTmpBtn" group="" style="display: none;">
                                     <span class="l-btn-left l-btn-icon-left">
                                         <span class="l-btn-text">暂存</span>
                                         <span class="l-btn-icon icon-add">&nbsp;</span>
                                     </span>
                                 </a>
-                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'" onclick="save(1);"
-                                    id="saveBtn" group="" style="display: none;">
+                                <a href="javascript:void(0);" class="easyui-linkbutton l-btn l-btn-small" data-options="iconCls:'icon-add'"
+                                    onclick="save(1);" id="saveBtn" group="" style="display: none;">
                                     <span class="l-btn-left l-btn-icon-left">
                                         <span class="l-btn-text">保存</span>
                                         <span class="l-btn-icon icon-add">&nbsp;</span>

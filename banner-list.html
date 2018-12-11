@@ -20,7 +20,7 @@
               <a><cite>会员管理</cite></a>
               <a><cite>轮播列表</cite></a>
             </span>
-            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新">刷新<i class="layui-icon" style="line-height:30px">ဂ</i></a>
         </div>
         <div class="x-body">
             <xblock><button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon">&#xe640;</i>批量删除</button><button class="layui-btn" onclick="banner_add('添加用户','banner-add.html','600','500')"><i class="layui-icon">&#xe608;</i>添加</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
@@ -93,6 +93,7 @@
         </div>
         <script src="./lib/layui/layui.js" charset="utf-8"></script>
         <script src="./js/x-layui.js" charset="utf-8"></script>
+         <script src="./js/jquery-3.3.1.js"></script>
         <script>
             layui.use(['laydate','element','laypage','layer'], function(){
                 $ = layui.jquery;//jquery
@@ -156,8 +157,6 @@
                     layer.msg('已删除!',{icon:1,time:1000});
                 });
             }
-            </script>
-            <script>
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");

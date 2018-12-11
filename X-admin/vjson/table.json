@@ -1,0 +1,43 @@
+{
+  "success": {
+    "code": 200,
+    "message": "成功",
+    "result": [{
+        "license_no": "B1-20182029",
+        "company_name": "趣驰（上海）网络科技有限公司",
+        "business_type": "国内互联网虚拟专用网业务：苏州市;深圳市;上海市;杭州市;广州市;北京市",
+        "license_type": "增值电信",
+        "is_valid": "是",
+        "start_year": 2018,
+        "xqsj": 2023,
+        "license_status":"否"
+      },
+      {
+        "license_no": "B1-20182029",
+        "company_name": "趣驰（上海）网络科技有限公司",
+        "business_type": "国内互联网虚拟专用网业务：苏州市;深圳市;上海市;杭州市;广州市;北京市",
+        "license_type": "增值电信",
+        "is_valid": "是",
+        "start_year": 2018,
+        "xqsj": 2023,
+        "license_status":"否"
+      },
+      {
+        "license_no": "B1-20182029",
+        "company_name": "趣驰（上海）网络科技有限公司",
+        "business_type": "国内互联网虚拟专用网业务：苏州市;深圳市;上海市;杭州市;广州市;北京市",
+        "license_type": "增值电信",
+        "is_valid": "是",
+        "start_year": 2018,
+        "xqsj": 2023,
+        "license_status":"否"
+      }
+    ]
+  },
+  "fail": {
+    "message": "失败",
+    "code": 0,
+    "result": [],
+    "totalNum": null
+  }
+}

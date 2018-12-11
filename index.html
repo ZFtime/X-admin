@@ -27,13 +27,18 @@
               <li class="layui-nav-item"><img src="./images/logo.png" class="layui-circle" style="border: 2px solid #A9B7B7;"
                  width="35px" alt=""></li>
             -->
+                    <!-- <li class="layui-nav-ite logined">
+                        <a href="javascript:;">未登录</a>
+                    </li> -->
+
                     <li class="layui-nav-item">
-                        <a href="javascript:;">admin</a>
+                        <a href="javascript:;" id="loginUsername"></a>
                         <dl class="layui-nav-child">
                             <!-- 二级菜单 -->
-                            <dd><a href="">个人信息</a></dd>
-                            <dd><a href="">切换帐号</a></dd>
-                            <dd><a href="javascript:;" class="exitAdmin">退出</a></dd>
+                            <!-- <dd><a href="">个人信息</a></dd>
+                            <dd><a href="">切换帐号</a></dd> -->
+                            <!-- <dd><a href="javascript:;" class="exitAdmin">退出</a></dd> -->
+                           <dd><a href="javascript:;" class="exitAdmin">退出</a></dd> 
                         </dl>
                     </li>
                     <!--
@@ -456,7 +461,7 @@
                         </dl>
                     </li>
                     <!-- 增值电信年报 -->
-                    <!-- <li class="layui-nav-item">
+                   <!--  <li class="layui-nav-item">
                         <a class="javascript:;" href="javascript:;">
                             <i class="layui-icon" style="top: 3px;">&#xe630;</i><cite>增值电信年报</cite>
                         </a>
@@ -514,10 +519,28 @@
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script src="./js/x-admin.js"></script>
     <script src="./js/common.js"></script>
+     <script src="./js/jquery-3.3.1.js"></script>
     <script>
+      $(function(){
+        $("#loginUsername").text(sessionStorage.getItem('loginUsername'));
+      })
         document.querySelector(".exitAdmin").onclick = function () {
-            sessionStorage.setItem("isLogin", false);
-            window.location.href = "./login.html";
+            $.ajax({
+              type:"get",
+              url:"http://qzt.cn/api.php/index/Account/logout.html",
+              dataType:"json",
+              success:function(res){
+                // console.log(res);
+                if(res.code&&res.code===200){
+                    sessionStorage.setItem("isLogin", false);
+                    window.location.href = "/"; 
+                }
+              },
+              error:function(res){
+                console.log(res);
+              }
+            })
+            
         };
         var _hmt = _hmt || [];
         (function () {

@@ -20,22 +20,14 @@
 <body>
     <div class="x-nav" style="display: none;">
         <span class="layui-breadcrumb">
-            <a>
-                <cite>首页</cite>
-            </a>
+            <a><cite>首页</cite></a>
             <!-- <a><cite>会员管理</cite></a>
               <a><cite>角色管理</cite></a> -->
-            <a>
-                <cite>信息管理</cite>
-            </a>
-            <a>
-                <cite>许可证管理</cite>
-            </a>
+            <a><cite>信息管理</cite></a>
+            <a><cite>许可证管理</cite></a>
         </span>
         <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
-            title="刷新">
-            <i class="layui-icon" style="line-height:30px">ဂ</i>
-        </a>
+            title="刷新">刷新<i class="layui-icon" style="line-height:30px">ဂ</i></a>
     </div>
     <div class="x-body">
 
@@ -56,15 +48,11 @@
                 <div class="layui-input-inline" style="width:72%;">
                     <input type="text" name="username" placeholder="请输入公司名" autocomplete="off" class="layui-input">
                 </div>
-                <div class="layui-input-inline" style="width:80px">
-                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
-                        <i class="layui-icon">&#xe615;</i>
-                    </button>
+                <div class="layui-input-inline" style="width:54px">
+                    <button class="layui-btn" lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
                 </div>
-                <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);"
-                    title="刷新">
-                    <i class="layui-icon" style="line-height:30px">ဂ</i>
-                </a>
+                  <a class="layui-btn layui-btn-small layui-btn-refresh"  href="javascript:location.replace(location.href);"
+            title="刷新"><i class="layui-icon" style="line-height:30px">ဂ刷新</i></a>
             </div>
         </div>
         <table class="layui-table">
@@ -88,16 +76,17 @@
                     <!-- <td>
                         <input type="checkbox" value="1" name="">
                     </td> -->
-                    <td>公司名称某某有限公司</td>
+                    <!-- <td>公司名称某某有限公司</td>
                     <td>B2-12345678</td>
                     <td>增值电信</td>
                     <td>信息服务业务(不含互联网信息服务)</td>
                     <td>2018-01-01</td>
-                    <td>2018-11-11</td>
+                    <td>2018-11-11</td> -->
 
-                    <td class="td-manage">
+                    <!-- <td class="td-manage">
                         有效
-                        <a title="编辑" href="javascript:;" onclick="role_edit('编辑','role-edit.html','4','','510')" class="ml-5" style="text-decoration:none">
+                        <a title="编辑" href="javascript:;" onclick="role_edit('编辑','role-edit.html','4','','510')" class="ml-5"
+                            style="text-decoration:none">
                             <i class="layui-icon">&#xe642;</i>
                         </a>
                         <a title="删除" href="javascript:;" onclick="role_del(this,'1')" style="text-decoration:none">
@@ -105,10 +94,8 @@
                         </a>
                     </td>
                     <td class="td-manage">
-                        <a href="javascript:;" onclick="window.open('./as/as.html')">年检</a>
-                        <a href="javascript:;">续期</a>
-                        <a href="javascript:;">提醒</a>
-                    </td>
+                        <a href="javascript:;">年检</a> <a href="javascript:;">续期</a>
+                        <a href="javascript:;">提醒</a> -->
                     <!-- </td> -->
                     <!-- <td colspan='8'>暂无数据,请到我的公司添加数据</td> -->
                 </tr>
@@ -122,39 +109,77 @@
     <script src="./js/common.js"></script>
     <script src="./js/jquery-3.3.1.js"></script>
     <script>
-        var company_status = sessionStorage.getItem("company_status");
+        // var company_status = sessionStorage.getItem("status");
+        (function(){
+            getIcpData(1,10)
+        })()
+        function getIcpData(page,size){
+             var company_status = sessionStorage.getItem("companydataStatus");
+        // console.log(company_status);
         if (company_status == 200) {
             $.ajax({
                 type: "get",
-                url: 'http://qzt.cn/api.php/index/Company/get_license_list.html',
+                url: 'http://qzt.cn/api.php/index/Company/getLicenseList.html',
                 dataType: "json",
-                // data: {
-                //     company_name: data.field.username
-                // },
+                 data: {
+                    page:page,
+                    size:size
+                },
                 success: function (res) {
+                    // console.log('许可证管理'+JSON.stringify(res))
                     // icp许可证办理
-                    // console.log(res);
                     if (res.code === 200) {
-                        // console.log(res);
+                        console.log(res);
                         var html = "";
-                        var icpdata = res.data
-                        icpdata.forEach(function (element) {
-                            // console.log(element);
-                            html += "<tr>" +
-                                "<td>" + element.license_no + "</td>" +
-                                "<td>" + element.company_name + "</td>" +
-                                "<td>" + element.business_type + "</td>" +
-                                "<td>" + element.license_type + "</td>" +
-                                "<td>" + element.is_valid + "</td>" +
-                                "<td>" + element.start_year + "</td>" +
-                                "<td>" + element.start_year + "</td>" +
-                                "<td>" + element.xqsj + "</td>" +
-                                "</tr>";
-                            // $("#icp_tbody").append(html);
-                        });
-                        $("#icp_tbody").append(html);
+                        var icpdata= res.data.data
+                        var icpCount = res.data.count
+                        for(var i=0;i<icpdata.length;i++){
+                            // console.log(icpdata[i]);
+                            for(var j=0;j<icpdata[i].length;j++){
+                                // console.log(icpdata[i][j]);
+                                 var tdHtml='<a href="javascript:;" onclick="jumpPage()">年检 '+
+                            '</a> <a href="javascript:;">续期'+
+                            '</a>'+
+                            '<a href="javascript:;">提醒'+
+                            '</a>';
+                                    html += '<tr>' +
+                                        '<td>' + icpdata[i][j].company_name + '</td>' +
+                                        '<td>' + icpdata[i][j].license_no + '</td>' +
+                                        '<td>' + icpdata[i][j].business_type + '</td>' +
+                                        '<td>' + icpdata[i][j].license_type + '</td>' +
+                                        '<td>' + icpdata[i][j].start_year + '</td>' +
+                                        '<td>' + icpdata[i][j].xqsj + '</td>' +
+                                        '<td>' + icpdata[i][j].is_valid + '</td>' +
+                                        '<td>'+tdHtml+
+                                        '</td>'+
+                                    '</tr>';
+                            }
+                        }
+                        $("#icp_tbody").html(html);
+                        layui.use('laypage', function (res) {
+                        var laypage = layui.laypage;
+                        laypage({
+                            cont: "page",
+                            pages: icpCount,
+                            limit: 10,
+                            curr:page,
+                            // first: 1,
+                            // last: 100,
+                            prev: "上一页",
+                            next: "下一页",
+                            jump:function(obj,first){
+                                    // console.log("分页执行了");
+                                    // console.log(first);
+                                    curr=obj.curr;
+                                    if(!first){
+                                        getIcpData(curr,obj.limit);
+                                        console.log(curr);
+                                    }
+                                }
+                        })
+                    });
                     } else {
-                        // html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+                        html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
                         $("#icp_tbody").append(html);
                     }
                     // if (res.code && res.code == 200) {
@@ -170,22 +195,25 @@
                 }
             })
         } else {
-            // html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
+            html = " <td colspan='8'>" + "暂无数据,请到我的公司添加数据" + "</td>"
             $("#icp_tbody").append(html);
+        } 
         }
+      
 
-        layui.use('laypage', function () {
-            var laypage = layui.laypage;
-            laypage({
-                cont: "page",
-                pages: 100,
-                first: 1,
-                last: 100,
-                prev: "上一页",
-                next: "下一页"
-            })
+        // layui.use('laypage', function () {
+        //     var laypage = layui.laypage;
 
-        });
+        //     laypage({
+        //         cont: "page",
+        //         pages: 100,
+        //         first: 1,
+        //         last: 100,
+        //         prev: "上一页",
+        //         next: "下一页"
+        //     })
+
+        // });
         // layui.use(['laydate', 'element', 'laypage', 'layer'], function () {
         //     $ = layui.jquery; //jquery
         //     laydate = layui.laydate; //日期插件
@@ -195,6 +223,9 @@
 
         //     //以上模块根据需要引入
         // });
+        function jumpPage() {
+            window.open('./as/as.html');
+        }
 
         // //批量删除提交
         // function delAll() {

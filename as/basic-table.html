@@ -118,7 +118,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td colspan="3">
+                            <td colspan="3" class="checkboxParent">
                                 <input type="checkbox" name="jg1003" class="checkbox" value="（A）网络销售">（A）网络销售
                                 <input type="checkbox" name="jg1003" class="checkbox" value="（B）金融借贷">（B）金融借贷
                                 <input type="checkbox" name="jg1003" class="checkbox" value="（C）生产制造">（C）生产制造
@@ -152,8 +152,8 @@
                                 <input type="checkbox" name="jg1003" class="checkbox" value="（Y）其他" checked="checked">（Y）其他</td>
                             <td colspan="2">
                                 <div id="jg1003-1">
-                                    <span style="margin-right:5px;" id="（I）生活服务">（I）生活服务</span>,
-                                    <span style="margin-right:5px;" id="（Y）其他">（Y）其他</span>
+                                    <span style="margin-right:5px;" id="I">（I）生活服务</span>
+                                    <span style="margin-right:5px;" id="Y">（Y）其他</span>
                                 </div>
                             </td>
                             <td>
@@ -333,11 +333,11 @@
                             <td>14</td>
                             <td colspan="3">企业性质</td>
                             <td colspan="2" style="text-align: left;">
-                                <input type="radio" name="jg1013" class="radio" value="国有控股企业" id="国有控股企业" checked="">国有控股企业
+                                <input type="radio" name="jg1013" class="radio" value="国有控股企业" id="1" checked="">国有控股企业
                                 <br>
-                                <input type="radio" name="jg1013" class="radio" value="民营控股企业" id="民营控股企业" checked="checked">民营控股企业
+                                <input type="radio" name="jg1013" class="radio" value="民营控股企业" id="2" checked="checked">民营控股企业
                                 <br>
-                                <input type="radio" name="jg1013" class="radio" value="外商投资企业" id="外商投资企业">外商投资企业
+                                <input type="radio" name="jg1013" class="radio" value="外商投资企业" id="3">外商投资企业
                                 <br>
                             </td>
                             <td>
@@ -348,16 +348,16 @@
                             <td rowspan="3">15</td>
                             <td colspan="3" rowspan="3">上市情况</td>
                             <td colspan="2" style="text-align: left;">
-                                <div>
-                                    <input type="radio" name="jg1014" class="radio" value="未上市 " onclick="build(1)"
-                                        checked="">未上市
-                                    <input type="radio" name="jg1014" class="radio" value="新三板（股票代码）" onclick="build(2)">新三板（股票代码）
+                                <div class="radioParent">
+                                    <input type="radio" name="jg1014" class="radio" value="未上市 " 
+                                        checked="" data-type="1" data-id="1">未上市
+                                    <input type="radio" name="jg1014" class="radio" value="新三板（股票代码）" data-type="2" data-id="2">新三板（股票代码）
                                     <br>
-                                    <input type="radio" name="jg1014" class="radio" value="境内上市（股票代码）" onclick="build(2)">境内上市（股票代码）
-                                    <input type="radio" name="jg1014" class="radio" value="香港上市（股票代码）" onclick="build(2)">香港上市（股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="境内上市（股票代码）" data-type="2" data-id="3">境内上市（股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="香港上市（股票代码）" data-type="2" data-id="4">香港上市（股票代码）
                                     <br>
-                                    <input type="radio" name="jg1014" class="radio" value="美国上市（股票代码）" onclick="build(2)">美国上市（股票代码）
-                                    <input type="radio" name="jg1014" class="radio" value="其他地区上市（上市地区,股票代码）" onclick="build(3)">其他地区上市（上市地区,股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="美国上市（股票代码）" data-type="2" data-id="5">美国上市（股票代码）
+                                    <input type="radio" name="jg1014" class="radio" value="其他地区上市（上市地区,股票代码）" data-type="3" data-id="6">其他地区上市（上市地区,股票代码）
                                 </div>
                             </td>
                             <td rowspan="3">
@@ -371,7 +371,7 @@
                                     style="width: 100%; display: none;" textboxname="jg10141">
                                 <span class="textbox textbox-readonly easyui-fluid" style="width: 566px; height: 30px;">
                                     <input id="_easyui_textbox_input12" type="text" class="textbox-text validatebox-text validatebox-readonly textbox-prompt"
-                                        autocomplete="off" tabindex="" readonly="readonly" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        autocomplete="off" tabindex="" disabled placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
                                     <!-- <input type="hidden" class="textbox-value" name="jg10141" value="" maxlength="1000"> -->
                                 </span>
@@ -384,7 +384,7 @@
                                     style="width: 100%; display: none;" textboxname="jg10142">
                                 <span class="textbox easyui-fluid" style="width: 576px; height: 30px;">
                                     <input id="_easyui_textbox_input28" type="text" class="textbox-text validatebox-text"
-                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 556px;">
+                                        autocomplete="off" tabindex="" disabled placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 556px;">
                                     <!-- <input type="hidden" class="textbox-value" name="jg10142" value="835477" maxlength="1000"> -->
                                 </span>
                             </td>
@@ -487,11 +487,17 @@
                             <td>人</td>
                             <td>
                                 <input class="easyui-textbox textbox-f" id="jg1016" data-options="required:true,validType:'otherNum',value:'200'"
-                                    style="width: 100%; display: none;" textboxname="jg1016">
+                                    style="width: 100%; display: none;" textboxname="jg1016" >
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
-                                    <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text"
-                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                    <!-- <input id="_easyui_textbox_input18" type="number" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" pattern="[0-9]" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000"> -->
+                                        <input id="_easyui_textbox_input18" type="text" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" pattern="[0-9]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
+                                        <!-- <input id="_easyui_textbox_input18" type="number" class="textbox-text validatebox-text"
+                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        maxlength="1000" pattern="[0-9]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"> -->
                                     <!-- <input type="hidden" class="textbox-value" name="jg1016" value="200" maxlength="1000"> -->
                                 </span>
                             </td>
@@ -505,7 +511,7 @@
                                     style="width: 100%; display: none;" textboxname="jg1017">
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
                                     <input id="_easyui_textbox_input19" type="text" class="textbox-text validatebox-text"
-                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        autocomplete="off" tabindex="" pattern="[0-9]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
                                     <!-- <input type="hidden" class="textbox-value" name="jg1017" value="10" maxlength="1000"> -->
                                 </span>
@@ -520,7 +526,7 @@
                                     style="width: 100%; display: none;" textboxname="jg1018">
                                 <span class="textbox easyui-fluid" style="width: 566px; height: 30px;">
                                     <input id="_easyui_textbox_input20" type="text" class="textbox-text validatebox-text"
-                                        autocomplete="off" tabindex="" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
+                                        autocomplete="off" tabindex="" pattern="[0-9]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" placeholder="" style="margin: 0px; padding-top: 0px; padding-bottom: 0px; height: 30px; line-height: 30px; width: 546px;"
                                         maxlength="1000">
                                     <!-- <input type="hidden" class="textbox-value" name="jg1018" value="10" maxlength="1000"> -->
                                 </span>
@@ -553,189 +559,16 @@
     <script src="../js/x-layui.js" charset="utf-8"></script>
     <script src="../laydate/laydate.js"></script>
     <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../lib/layui/layui.js"></script>
     <script>
         laydate.render({
             elem: '#test1' //指定元素
         });
-        $("#_easyui_textbox_input1").html();
-        var isChange = '0';
-        var rptID = '4FB7D1EB763CC76D057DE8CE1C20F444';
-        var cptStatus = '1';
-        var saveStatus = '1';
-        var busCat = '省内';
 
-        $(function () {
-            $("input[name='jg1003']").click(function () {
-                if ($(this).attr("checked") == "checked") {
-                    if ($("input[name='jg1003']:checked").length <= 3) {
-                        var html = "";
-                        $("input[name='jg1003']:checked").each(function () {
-                            if (html != "") {
-                                html += ",";
-                            }
-                            html += "<span style ='margin-right:5px;' id = '" + $(this).val() +
-                                "'>" + $(this).val() + "</span>";
-                        });
-                        $("#jg1003-1").html(html);
-                    } else {
-                        $(this).attr("checked", false);
-                        layer.msg("最多只能选三项！", {
-                            icon: 7
-                        });
-                    }
-                } else {
-                    var html = "";
-                    $("input[name='jg1003']:checked").each(function (i, b) {
-                        if (html != "") {
-                            html += ",";
-                        }
-                        html += "<span style ='margin-right:5px;' id = '" + $(b).val() + "'>" +
-                            $(b).val() + "</span>";
-                    });
-                    $("#jg1003-1").html(html);
-                }
-            });
-            if (isChange == "0") {
-                $("#saveTmpBtn").hide();
-                $("#saveBtn").hide();
-            } else {
-                if (cptStatus == "1" || cptStatus == "2" || cptStatus == "3") {
-                    $("#saveTmpBtn").hide();
-                }
-            }
-            if (saveStatus == '0') {
-                $("#status").text("暂存");
-            }
-            if (saveStatus == '1') {
-                $("#status").text("保存");
-            }
-            if (busCat != "跨地区") {
-                $("#17row").hide();
-                $(".jg1015").hide();
-                $("#17td").text("16");
-                $("#18td").text("17");
-                $("#jg101501").textbox({
-                    required: false
-                });
-                $("#jg101511").textbox({
-                    required: false
-                });
-                $("#jg101521").combobox({
-                    required: false
-                });
-                $("#jg101531").textbox({
-                    required: false
-                });
-                $("#jg101541").textbox({
-                    required: false
-                });
-            }
-            init();
-            lalala(
-                '北京金三科技股份有限公司主营业务包括技术开发、技术服务、技术咨询、技术转让；基础软件服务；应用软件服务；代理、发布广告；计算机技术培训；销售计算机、软件及辅助设备、通讯设备、电子产品；零售、网上销售图书、报纸、期刊、电子出版物、音像制品（出版物经营许可证有效期至2015年12月31日）；互联网信息服务。',
-                '#jg1000');
-            lalala('信息服务业务（仅限互联网信息服务）', '#jg1012');
-        });
-
-
-        function init() {
-            if ('（I）生活服务,（Y）其他' != null && '（I）生活服务,（Y）其他' != "") {
-                var jg1003 = '（I）生活服务,（Y）其他'.split(",");
-                var html = "";
-                for (var i = 0; i < jg1003.length; i++) {
-                    $("input[value='" + jg1003[i] + "']").attr("checked", "checked");
-                    if (html != "") {
-                        html += ",";
-                    }
-                    html += "<span style ='margin-right:5px;' id = '" + jg1003[i] + "'>" + jg1003[i] + "</span>";
-                }
-                $("#jg1003-1").html(html);
-            }
-            if ('民营控股企业' != null && '民营控股企业' != "") {
-                $("#民营控股企业").attr("checked", "checked");
-            }
-            if ('新三板（股票代码）' != null && '新三板（股票代码）' != "") {
-                if ('新三板（股票代码）' != "其他") {
-                    if ('新三板（股票代码）' == "其他地区上市（上市地区,股票代码）") {
-                        $("input[value='新三板（股票代码）']").prop("checked", "checked");
-                        $("#jg10141").textbox({
-                            value: '',
-                            readonly: false
-                        });
-                        $("#jg10142").textbox({
-                            value: '835477',
-                            readonly: false
-                        });
-                    }
-                }
-                if ('新三板（股票代码）' == "新三板（股票代码）" || '新三板（股票代码）' == "境内上市（股票代码）" ||
-                    '新三板（股票代码）' == "美国上市（股票代码）" || '新三板（股票代码）' == "香港上市（股票代码）") {
-                    $("input[value='新三板（股票代码）']").prop("checked", "checked");
-                    $("#jg10142").textbox({
-                        value: '835477',
-                        readonly: false
-                    });
-                }
-            }
-            if ('否' != null && '否' != "") {
-                $("#否").attr("checked", "checked");
-            }
-        }
-
-        // layui.use(['element', 'layer', 'form'], function () {
-        //     $ = layui.jquery; //jquery
-        //     lement = layui.element(); //面包导航
-        //     layer = layui.layer; //弹出层
-        //     form = layui.form();
-
-        //     //监听提交
-        //     form.on('submit(add)', function (data) {
-        //         console.log(data);
-        //         //发异步，把数据提交给php
-        //         layer.alert("增加成功", {
-        //             icon: 6
-        //         });
-        //         $('#x-link').prepend(
-        //             '<tr><td><input type="checkbox"value="1"name=""></td><td>1</td><td>1</td><td>' +
-        //             data.field.name +
-        //             '</td><td class="td-manage"><a title="编辑"href="javascript:;"onclick="cate_edit(\'编辑\',\'cate-edit.html\',\'4\',\'\',\'510\')"class="ml-5"style="text-decoration:none"><i class="layui-icon">&#xe642;</i></a><a title="删除"href="javascript:;"onclick="cate_del(this,\'1\')"style="text-decoration:none"><i class="layui-icon">&#xe640;</i></a></td></tr>'
-        //         );
-        //         return false;
-        //     });
-
-
-        // })
-
-
-
-
-        //批量删除提交
-        // function delAll() {
-        //     layer.confirm('确认要删除吗？', function (index) {
-        //         //捉到所有被选中的，发异步进行删除
-        //         layer.msg('删除成功', {
-        //             icon: 1
-        //         });
-        //     });
-        // }
-
-        //-编辑
-        // function cate_edit(title, url, id, w, h) {
-        //     x_admin_show(title, url, w, h);
-        // }
-
-        /*-删除*/
-        // function cate_del(obj, id) {
-        //     layer.confirm('确认要删除吗？', function (index) {
-        //         //发异步删除数据
-        //         $(obj).parents("tr").remove();
-        //         layer.msg('已删除!', {
-        //             icon: 1,
-        //             time: 1000
-        //         });
-        //     });
-        // }
+        
+        
     </script>
+    <script src="../js/handleTable.js"></script>
     <script>
         var _hmt = _hmt || [];
         (function () {
